@@ -1,0 +1,185 @@
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Загальні стилі для усього сайту
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+h1 {
+	font-weight: 800;
+	font-size: 40px;
+	line-height: 117%;
+	letter-spacing: 0.05em;
+	text-transform: capitalize;
+	text-align: center;
+	color: #1d1f28;
+
+	@media (min-width:toEm($tab)) {
+		font-size: 80px;
+		line-height: 125%;
+
+	}
+}
+
+h2 {
+	font-weight: 800;
+	font-size: 30px;
+	letter-spacing: 0.05em;
+	text-transform: capitalize;
+	text-align: center;
+
+
+	@media (min-width:toEm($tab)) {
+		font-size: 50px;
+	}
+}
+
+.btn {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 16px;
+	color: #1d1f28;
+	border-radius: 53px;
+	padding: 22px;
+	transition: all 0.3s;
+
+	@media (min-width:toEm($tab)) {
+		padding: 22px 49px;
+		width: unset;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: #c87c4d;
+			color: #faf5f5;
+		}
+	}
+
+
+
+
+	&_arr {
+		border: 1px solid #1d1f28;
+
+		display: inline-flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+		gap: 9px;
+
+
+
+		&::before {
+			font-size: 10px;
+			transition: all 0.3s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: #e3b66d;
+				background: transparent;
+				color: #1d1f28;
+
+				&::before {
+					transform: translateX(9px);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.build-app {
+
+	padding: 40px 18px;
+
+	@media (min-width:toEm($tab)) {
+		padding: 85px 100px 50px;
+	}
+
+	// .build-app__title
+	&__title {
+		font-weight: 800;
+		font-size: 30px;
+		letter-spacing: 0.05em;
+		text-transform: capitalize;
+		margin-bottom: 16px;
+
+		@media (min-width:toEm($tab)) {
+			text-align: center;
+		}
+	}
+}
+
+.form {
+	display: grid;
+	gap: 10px;
+
+	@media (min-width:toEm($tab)) {
+		gap: 17px;
+	}
+
+	// .form__row
+	&__row {}
+
+	// .form__label
+	&__label {
+		font-family: var(--second-family);
+		font-weight: 500;
+		font-size: 16px;
+		// color: #1d1f28;
+		padding: 4px 33px 8px;
+	}
+
+	// .form__input
+	&__input {
+
+		@media (min-width:toEm($tab)) {
+			@media (min-width:toEm($tab)) {
+				width: 368px;
+			}
+		}
+
+		input {
+			border: 1px solid #1d1f28;
+			border-radius: 53px;
+			width: 100%;
+			padding: 23px 33px 20px;
+			font-weight: 400;
+			font-size: 14px;
+
+			&::placeholder {
+				color: #afafaf;
+			}
+
+			&:focus {
+				border-color: #e3b66d;
+			}
+
+			.footer__build-app & {
+				border-color: #faf5f5;
+			}
+
+		}
+	}
+
+	// .form__submit
+	&__submit {
+		padding-top: 13px;
+
+		// @media (min-width:toEm($tab)) {
+		// 	padding-top: 26px;
+		// }
+
+		.btn {
+			border-radius: 77px;
+			width: 100%;
+			padding: 21px;
+			background: #e3b66d;
+			font-weight: 700;
+			font-size: 16px;
+			text-align: center;
+			color: #1d1f28;
+			// color: #1d1f28;
+		}
+	}
+}

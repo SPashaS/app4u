@@ -1,0 +1,50 @@
+.header {
+	padding: 22px 0;
+	position: relative;
+
+	// .header__container
+	&__container {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+
+		@media (min-width:toEm($mob)) {
+			flex-direction: row;
+		}
+	}
+
+	// .header__logo
+	&__logo {
+		@media (max-width:toEm($mob)) {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+	}
+
+	// .header__btn
+	&__btn {
+		display: none;
+
+		@media (min-width:toEm($mob)){
+			display: block;
+			font-weight: 700;
+			font-size: 16px;
+			background: #e3b66d;
+			color: #1d1f28;
+			border-radius: 77px;
+			padding: 20px;
+		}
+
+		@media (min-width:toEm($tab)){
+			padding: 20px 45px;
+		}
+
+	}
+
+
+}
