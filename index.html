@@ -1,964 +1,643 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preload" href="./assets/fonts/Sora-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Sora-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Sora-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Sora-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Lexend-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Lexend-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Lexend-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="./assets/fonts/Lexend-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="preload" href="data:font/woff2;base64,d09GMgABAAAAAAMsAAsAAAAABawAAALfAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVBEICoN8gz4BNgIkAxwLEAAEIAWCbgcgG50EyAYC/j1rXtJVuu4KWQlnLHLn9kx9mX+QO3E5bg3Ls2ma0a8VzWl7UJQHOrHLst4aYxMFHCWeHtSGq4i3LZAtU8UcLEBaKl0GZte9iDckCRsSfcIR1nx4JclnzGfIl7kDEBCtikFmtw+CFDKCTUc6oGCNlFYK1FeS+Z/ZfM/4ij4qzE/cdacxsQvEKu0gtFUwxR6wBBYAp0hqkk9iKSGzMjguXZwwvO/WMeF9FmxQpm1yc902NqrrsGmnxNjT+uFdBk9cvFk/faOr2/CFKxmzwmXAlvQjt5MPKNNSD93NPBY5aNEqMfaWfvpB14En71She3mDFx/2E0SrU3djd2XD3ZatCrt3o2DrnYit99y3x+2+B3/U9rzTDPCAexFb74SfuJ19Irv4MP9M/o7b0bdvtyQpGF+3w/1Y/8z+tNqRh05ODy8wIWPCpMI5Kj5TfH2n+DTACJyiG8sy5taoS48MhkeXZsz8X17RNPD8hfj4C/frpSvK38+cefyRIbRlmMHvxMwZJVpkRkZ9ZIv2vz3hazD4noBPSRU5jc+Oia4MdT3su7oiZnnfkTktOjaILlzl9fphQdtXr9JCw9IqGn/6uE0tTthw0LU8K65zuw4dGjUsrwmID6jJrCkOKWqqr2zGKADMZ0A+Q3Klodw6QiK//oUABPx2djB0csj+Zq3XAfA0+1cBsHuwPhhOw1rrj9IFQGlodwOw0pGYJE4FrfvBWrYArEi/UUdC3Pbs2vEKLNRMSoL9E5WxIL7n6AR1Kgv0OJCWtiGP2BW86IeM0NkgyGBBKgl7WqhkFFI4OkE3lQVueKksUSh+k0IyM7rXmYz96U4dJoz0b6n169/dZFQTYuNpiUY/NiCrN5UEYok/W234XU21rgN71fSjKRpdGUgvaugXX1RqMg5Qu2pGrV/NAK1erR2qVtSZGphMxlhKd8sHoNIVDePfujUMQKM+vZahqFS84WyAyW88FpkEAAA=" as="font" type="font/woff2" crossorigin="anonymous">
-		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<title>Home Page - App4u</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1746382828148"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1746382828148">
-	</head>
-	<body>
-		<div class="wrapper">
-			<header data-fls-header="" class="header">
-				<div class="header__container">
-					<div class="header__logo">
-						<img src="data:image/svg+xml,%3csvg%20width='143'%20height='36'%20viewBox='0%200%20143%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M64.0056%2035.4336V0H79.2927C81.52%200%2083.4941%200.506195%2085.2152%201.51858C86.97%202.53097%2088.3536%203.91457%2089.366%205.66938C90.4121%207.42419%2090.9352%209.39835%2090.9352%2011.5919C90.9352%2013.8866%2090.4121%2015.9451%2089.366%2017.7674C88.3536%2019.556%2086.97%2020.9733%2085.2152%2022.0195C83.4941%2023.0656%2081.52%2023.5887%2079.2927%2023.5887H72.6109V35.4336H64.0056ZM72.4591%2016.0464H78.0778C78.8202%2016.0464%2079.4952%2015.8608%2080.1026%2015.4896C80.71%2015.1184%2081.1994%2014.6122%2081.5706%2013.971C81.9418%2013.3298%2082.1274%2012.5874%2082.1274%2011.7437C82.1274%2010.8663%2081.9418%2010.1239%2081.5706%209.51646C81.1994%208.90903%2080.71%208.43658%2080.1026%208.09912C79.4952%207.76165%2078.8202%207.59292%2078.0778%207.59292H72.4591V16.0464Z'%20fill='%231D1F28'/%3e%3cpath%20d='M37.5767%2035.4336V0H52.8637C55.091%200%2057.0652%200.506195%2058.7862%201.51858C60.541%202.53097%2061.9246%203.91457%2062.937%205.66938C63.9832%207.42419%2064.5062%209.39835%2064.5062%2011.5919C64.5062%2013.8866%2063.9832%2015.9451%2062.937%2017.7674C61.9246%2019.556%2060.541%2020.9733%2058.7862%2022.0195C57.0652%2023.0656%2055.091%2023.5887%2052.8637%2023.5887H46.182V35.4336H37.5767ZM46.0301%2016.0464H51.6489C52.3913%2016.0464%2053.0662%2015.8608%2053.6737%2015.4896C54.2811%2015.1184%2054.7704%2014.6122%2055.1416%2013.971C55.5128%2013.3298%2055.6984%2012.5874%2055.6984%2011.7437C55.6984%2010.8663%2055.5128%2010.1239%2055.1416%209.51646C54.7704%208.90903%2054.2811%208.43658%2053.6737%208.09912C53.0662%207.76165%2052.3913%207.59292%2051.6489%207.59292H46.0301V16.0464Z'%20fill='%231D1F28'/%3e%3cpath%20d='M5.01147%2035.4336L19.0331%200H26.3223L40.2426%2035.4336H31.5361L24.8543%2017.4637C24.5843%2016.755%2024.3144%2015.9958%2024.0444%2015.1858C23.7744%2014.3759%2023.5045%2013.5491%2023.2345%2012.7055C22.9645%2011.8281%2022.6945%2010.9844%2022.4246%2010.1745C22.1883%209.33086%2021.9859%208.55469%2021.8171%207.84602L23.3357%207.7954C23.1332%208.63906%2022.897%209.46584%2022.6271%2010.2758C22.3908%2011.0857%2022.1377%2011.8956%2021.8678%2012.7055C21.6315%2013.4817%2021.3616%2014.2747%2021.0578%2015.0846C20.7541%2015.8608%2020.4673%2016.6707%2020.1973%2017.5143L13.5155%2035.4336H5.01147ZM11.6932%2029.2834L14.3761%2022.8041H30.6755L33.3078%2029.2834H11.6932Z'%20fill='%231D1F28'/%3e%3cpath%20d='M118.728%2035.7374C115.792%2035.7374%20113.177%2035.1468%20110.882%2033.9657C108.587%2032.7508%20106.782%2031.0972%20105.466%2029.005C104.183%2026.9127%20103.542%2024.5167%20103.542%2021.817V0H112.249V21.3614C112.249%2022.6438%20112.536%2023.808%20113.109%2024.8542C113.683%2025.8666%20114.459%2026.6765%20115.438%2027.2839C116.416%2027.8576%20117.513%2028.1444%20118.728%2028.1444C120.01%2028.1444%20121.141%2027.8576%20122.12%2027.2839C123.132%2026.6765%20123.942%2025.8666%20124.549%2024.8542C125.157%2023.808%20125.46%2022.6438%20125.46%2021.3614V0H133.863V21.817C133.863%2024.5167%20133.205%2026.9127%20131.889%2029.005C130.607%2031.0972%20128.818%2032.7508%20126.523%2033.9657C124.229%2035.1468%20121.63%2035.7374%20118.728%2035.7374Z'%20fill='%231D1F28'/%3e%3cpath%20d='M79.7256%2029.2051V23.3052L94.3748%200H99.4121V8.16634H96.4308L87.1958%2022.9246V23.2014H112.457L112.515%2023.376C113.186%2025.396%20114.746%2026.9964%20116.749%2027.7179C118.103%2028.206%20119.593%2028.1991%20120.945%2027.7029C122.887%2026.9904%20124.423%2025.4517%20125.125%2023.5065L125.235%2023.2014H143V29.2051H79.7256ZM96.5679%2035.4336V27.4057L96.705%2024.7932V0H103.661V35.4336H96.5679Z'%20fill='%23E3B66D'/%3e%3cpath%20d='M0%2023.0952H7.90929L5.69469%2029.1062H0V23.0952Z'%20fill='%23E3B66D'/%3e%3c/svg%3e" alt="Logo">
-					</div>
-					<div class="header__menu menu">
-						<button type="button" data-fls-menu="" class="menu__icon icon-menu">
-							<span></span>
-						</button>
-						<nav class="menu__body">
-							<ul class="menu__list">
-								<li class="menu__item">
-									<a href="#" class="menu__link">Portfolio</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" class="menu__link">How We Work</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" class="menu__link">Pricing</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" class="menu__link">FAQ</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-					<!--
-<fetch url="@components/layout/menu/menu.js?v=1746382828148on">
-<each loop='item in response'>
-</each>
-</fetch>
--->
-					<a href="#" class="header__btn btn">Get in Touch</a>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preload" href="./assets/fonts/Sora-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Sora-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Sora-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Sora-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Lexend-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Lexend-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Lexend-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="./assets/fonts/Lexend-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload"
+		href="data:font/woff2;base64,d09GMgABAAAAAAMsAAsAAAAABawAAALfAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVBEICoN8gz4BNgIkAxwLEAAEIAWCbgcgG50EyAYC/j1rXtJVuu4KWQlnLHLn9kx9mX+QO3E5bg3Ls2ma0a8VzWl7UJQHOrHLst4aYxMFHCWeHtSGq4i3LZAtU8UcLEBaKl0GZte9iDckCRsSfcIR1nx4JclnzGfIl7kDEBCtikFmtw+CFDKCTUc6oGCNlFYK1FeS+Z/ZfM/4ij4qzE/cdacxsQvEKu0gtFUwxR6wBBYAp0hqkk9iKSGzMjguXZwwvO/WMeF9FmxQpm1yc902NqrrsGmnxNjT+uFdBk9cvFk/faOr2/CFKxmzwmXAlvQjt5MPKNNSD93NPBY5aNEqMfaWfvpB14En71She3mDFx/2E0SrU3djd2XD3ZatCrt3o2DrnYit99y3x+2+B3/U9rzTDPCAexFb74SfuJ19Irv4MP9M/o7b0bdvtyQpGF+3w/1Y/8z+tNqRh05ODy8wIWPCpMI5Kj5TfH2n+DTACJyiG8sy5taoS48MhkeXZsz8X17RNPD8hfj4C/frpSvK38+cefyRIbRlmMHvxMwZJVpkRkZ9ZIv2vz3hazD4noBPSRU5jc+Oia4MdT3su7oiZnnfkTktOjaILlzl9fphQdtXr9JCw9IqGn/6uE0tTthw0LU8K65zuw4dGjUsrwmID6jJrCkOKWqqr2zGKADMZ0A+Q3Klodw6QiK//oUABPx2djB0csj+Zq3XAfA0+1cBsHuwPhhOw1rrj9IFQGlodwOw0pGYJE4FrfvBWrYArEi/UUdC3Pbs2vEKLNRMSoL9E5WxIL7n6AR1Kgv0OJCWtiGP2BW86IeM0NkgyGBBKgl7WqhkFFI4OkE3lQVueKksUSh+k0IyM7rXmYz96U4dJoz0b6n169/dZFQTYuNpiUY/NiCrN5UEYok/W234XU21rgN71fSjKRpdGUgvaugXX1RqMg5Qu2pGrV/NAK1erR2qVtSZGphMxlhKd8sHoNIVDePfujUMQKM+vZahqFS84WyAyW88FpkEAAA="
+		as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Home Page - App4u</title>
+	<script type="module" crossorigin="" src="./js/index.min.js?v=1746382828148"></script>
+	<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1746382828148">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-fls-header="" class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img
+						src="data:image/svg+xml,%3csvg%20width='143'%20height='36'%20viewBox='0%200%20143%2036'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M64.0056%2035.4336V0H79.2927C81.52%200%2083.4941%200.506195%2085.2152%201.51858C86.97%202.53097%2088.3536%203.91457%2089.366%205.66938C90.4121%207.42419%2090.9352%209.39835%2090.9352%2011.5919C90.9352%2013.8866%2090.4121%2015.9451%2089.366%2017.7674C88.3536%2019.556%2086.97%2020.9733%2085.2152%2022.0195C83.4941%2023.0656%2081.52%2023.5887%2079.2927%2023.5887H72.6109V35.4336H64.0056ZM72.4591%2016.0464H78.0778C78.8202%2016.0464%2079.4952%2015.8608%2080.1026%2015.4896C80.71%2015.1184%2081.1994%2014.6122%2081.5706%2013.971C81.9418%2013.3298%2082.1274%2012.5874%2082.1274%2011.7437C82.1274%2010.8663%2081.9418%2010.1239%2081.5706%209.51646C81.1994%208.90903%2080.71%208.43658%2080.1026%208.09912C79.4952%207.76165%2078.8202%207.59292%2078.0778%207.59292H72.4591V16.0464Z'%20fill='%231D1F28'/%3e%3cpath%20d='M37.5767%2035.4336V0H52.8637C55.091%200%2057.0652%200.506195%2058.7862%201.51858C60.541%202.53097%2061.9246%203.91457%2062.937%205.66938C63.9832%207.42419%2064.5062%209.39835%2064.5062%2011.5919C64.5062%2013.8866%2063.9832%2015.9451%2062.937%2017.7674C61.9246%2019.556%2060.541%2020.9733%2058.7862%2022.0195C57.0652%2023.0656%2055.091%2023.5887%2052.8637%2023.5887H46.182V35.4336H37.5767ZM46.0301%2016.0464H51.6489C52.3913%2016.0464%2053.0662%2015.8608%2053.6737%2015.4896C54.2811%2015.1184%2054.7704%2014.6122%2055.1416%2013.971C55.5128%2013.3298%2055.6984%2012.5874%2055.6984%2011.7437C55.6984%2010.8663%2055.5128%2010.1239%2055.1416%209.51646C54.7704%208.90903%2054.2811%208.43658%2053.6737%208.09912C53.0662%207.76165%2052.3913%207.59292%2051.6489%207.59292H46.0301V16.0464Z'%20fill='%231D1F28'/%3e%3cpath%20d='M5.01147%2035.4336L19.0331%200H26.3223L40.2426%2035.4336H31.5361L24.8543%2017.4637C24.5843%2016.755%2024.3144%2015.9958%2024.0444%2015.1858C23.7744%2014.3759%2023.5045%2013.5491%2023.2345%2012.7055C22.9645%2011.8281%2022.6945%2010.9844%2022.4246%2010.1745C22.1883%209.33086%2021.9859%208.55469%2021.8171%207.84602L23.3357%207.7954C23.1332%208.63906%2022.897%209.46584%2022.6271%2010.2758C22.3908%2011.0857%2022.1377%2011.8956%2021.8678%2012.7055C21.6315%2013.4817%2021.3616%2014.2747%2021.0578%2015.0846C20.7541%2015.8608%2020.4673%2016.6707%2020.1973%2017.5143L13.5155%2035.4336H5.01147ZM11.6932%2029.2834L14.3761%2022.8041H30.6755L33.3078%2029.2834H11.6932Z'%20fill='%231D1F28'/%3e%3cpath%20d='M118.728%2035.7374C115.792%2035.7374%20113.177%2035.1468%20110.882%2033.9657C108.587%2032.7508%20106.782%2031.0972%20105.466%2029.005C104.183%2026.9127%20103.542%2024.5167%20103.542%2021.817V0H112.249V21.3614C112.249%2022.6438%20112.536%2023.808%20113.109%2024.8542C113.683%2025.8666%20114.459%2026.6765%20115.438%2027.2839C116.416%2027.8576%20117.513%2028.1444%20118.728%2028.1444C120.01%2028.1444%20121.141%2027.8576%20122.12%2027.2839C123.132%2026.6765%20123.942%2025.8666%20124.549%2024.8542C125.157%2023.808%20125.46%2022.6438%20125.46%2021.3614V0H133.863V21.817C133.863%2024.5167%20133.205%2026.9127%20131.889%2029.005C130.607%2031.0972%20128.818%2032.7508%20126.523%2033.9657C124.229%2035.1468%20121.63%2035.7374%20118.728%2035.7374Z'%20fill='%231D1F28'/%3e%3cpath%20d='M79.7256%2029.2051V23.3052L94.3748%200H99.4121V8.16634H96.4308L87.1958%2022.9246V23.2014H112.457L112.515%2023.376C113.186%2025.396%20114.746%2026.9964%20116.749%2027.7179C118.103%2028.206%20119.593%2028.1991%20120.945%2027.7029C122.887%2026.9904%20124.423%2025.4517%20125.125%2023.5065L125.235%2023.2014H143V29.2051H79.7256ZM96.5679%2035.4336V27.4057L96.705%2024.7932V0H103.661V35.4336H96.5679Z'%20fill='%23E3B66D'/%3e%3cpath%20d='M0%2023.0952H7.90929L5.69469%2029.1062H0V23.0952Z'%20fill='%23E3B66D'/%3e%3c/svg%3e"
+						alt="Logo">
 				</div>
-			</header>
-			<main class="page page--home">
-				<section class="page__hero hero">
-					<div class="hero__container">
-						<div class="hero__header">
-							<h1 class="hero__title">
-								Full dedicated
-								<br>
-								team for your project
-							</h1>
-							<div class="hero__text">
-								<p>We offer tailored, cost-optimized Mobile Apps development solutions</p>
-							</div>
-							<a href="#" class="hero__btn btn --icon-arrow btn_arr">View Portfolio</a>
-						</div>
-					</div>
-					<div class="hero__slider-wrapper">
-						<div class="hero__container">
-							<div class="hero__slider swiper" data-fls-slider="">
-								<div class="hero__swiper swiper-wrapper">
-									<div class="hero__slide swiper-slide slide-hero slide-hero_blue">
-										<div class="slide-hero__body">
-											<div class="slide-hero__content">
-												<div class="slide-hero__title" data-swiper-parallax="-300">2Application Consulting</div>
-												<div class="slide-hero__text">
-													<p>
-														Get expert guidance for your app development journey. We don’t just conduct standard discovery
-                      and
-                      audits: we dive deep into understanding your business goals and break down your initial
-                      requirements
-                      to a functional MVP. Our process provides you with detailed domain research, thorough product
-                      audits, and step-by-step recommendations, how to bring your idea to life. We not only highlight
-                      potential risks, but also propose effective alternatives to avoid them or reframe the original
-                      idea
-                      so that it perfectly meets our clients’ needs.
-													</p>
-													<ul>
-														<li>Discovery & Research</li>
-														<li>App Audits & Performance Reviews</li>
-														<li>Step-by-step recommendations</li>
-													</ul>
-												</div>
-											</div>
-											<div class="slide-hero__img slide-hero__img_2" data-swiper-parallax="-100" style="bottom: 5px; left: -31%; width: 154%;">
-												<picture>
-													<source media="(max-width: 600px)" srcset="./assets/img/hero/2-600.webp" type="image/webp">
-													<source media="(max-width: 1200px)" srcset="./assets/img/hero/2-1200.webp" type="image/webp">
-													<img alt="" src="./assets/img/hero/2.webp">
-												</picture>
-											</div>
-											<div class="slide-hero__body-bg">
-												<svg width="968" height="463" viewbox="0 0 968 463" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M1051.23 232.771C1017.03 276.853 923.803 378.149 823.243 429.119C787.839 447.064 745.465 451.752 700.082 449.761C654.536 447.763 603.467 438.888 549.271 427.555C439.634 404.628 316.314 371.602 186.034 357.902C87.9267 347.585 28.8434 379.447 -6.68345 420.397C-43.3639 462.677 -57.2693 517.442 -58.4966 554.588L-108.469 552.937C-106.959 507.257 -90.3679 440.558 -44.4513 387.632C2.61906 333.376 78.2341 296.29 191.264 308.176C324.905 322.23 453.395 356.424 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.205 396.905 800.638 384.521C891.557 338.437 979.354 243.849 1011.73 202.121L1051.23 232.771Z"></path>
-													<path d="M-214.772 74.0026C-40.0155 -20.515 96.8396 -23.7496 224.014 19.1832C286.634 40.3232 346.107 72.3733 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641C686.721 283.137 769.049 272.392 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.089 164.723 936.188 237.481 858.307 280.342C778.709 324.148 677.231 335.865 564.385 267.387C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.971 379.702 151.255C321.285 115.796 265.478 85.9535 208.021 66.5567C95.0418 28.4158 -27.4434 29.5298 -190.986 117.983L-214.772 74.0026Z"></path>
-													<path d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.356 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z"></path>
-												</svg>
-											</div>
-										</div>
-									</div>
-									<div class="hero__slide swiper-slide slide-hero">
-										<div class="slide-hero__body">
-											<div class="slide-hero__content">
-												<div class="slide-hero__title" data-swiper-parallax="-300">1Application Consulting</div>
-												<div class="slide-hero__text">
-													<p>
-														Get expert guidance for your app development journey. We don’t just conduct standard discovery
-                      and
-                      audits: we dive deep into understanding your business goals and break down your initial
-                      requirements
-                      to a functional MVP. Our process provides you with detailed domain research, thorough product
-                      audits, and step-by-step recommendations, how to bring your idea to life. We not only highlight
-                      potential risks, but also propose effective alternatives to avoid them or reframe the original
-                      idea
-                      so that it perfectly meets our clients’ needs.
-													</p>
-													<ul>
-														<li>Discovery & Research</li>
-														<li>App Audits & Performance Reviews</li>
-														<li>Step-by-step recommendations</li>
-													</ul>
-												</div>
-											</div>
-											<div class="slide-hero__img slide-hero__img_1" data-swiper-parallax="-100">
-												<picture>
-													<source media="(max-width: 600px)" srcset="./assets/img/hero/1-600.webp" type="image/webp">
-													<source media="(max-width: 1200px)" srcset="./assets/img/hero/1-1200.webp" type="image/webp">
-													<img alt="" src="./assets/img/hero/1.webp">
-												</picture>
-											</div>
-											<div class="slide-hero__body-bg">
-												<svg width="968" height="463" viewbox="0 0 968 463" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M1051.23 232.771C1017.3 276.509 925.256 376.57 825.6 427.915L823.244 429.119C787.839 447.064 745.466 451.751 700.083 449.76C654.536 447.762 603.467 438.888 549.271 427.555C441.347 404.986 320.165 372.631 192.136 358.558L186.034 357.902C87.9269 347.585 28.8436 379.447 -6.68321 420.397C-43.3636 462.677 -57.269 517.442 -58.4964 554.588L-108.468 552.937C-106.959 507.257 -90.3677 440.558 -44.4511 387.632C2.6193 333.376 78.2343 296.29 191.264 308.176L197.524 308.849C328.915 323.295 455.053 356.77 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.206 396.905 800.638 384.521L802.768 383.432C892.925 336.963 979.607 243.523 1011.73 202.121L1051.23 232.771Z" fill="#C88E4D"></path>
-													<path d="M-214.772 74.0025C-40.0155 -20.5151 96.8396 -23.7497 224.014 19.1831C286.634 40.3231 346.107 72.3732 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641L592.581 226C688.007 282.969 769.558 272.112 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.088 164.723 936.188 237.481 858.307 280.342C779.331 323.806 678.816 335.68 567.028 268.977L564.385 267.386C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.97 379.702 151.255C321.285 115.796 265.478 85.9534 208.021 66.5566C95.0418 28.4158 -27.4434 29.5297 -190.986 117.982L-214.772 74.0025Z" fill="#C88E4D"></path>
-													<path d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.3559 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z" fill="#C88E4D"></path>
-												</svg>
-											</div>
-										</div>
-									</div>
-									<div class="hero__slide swiper-slide slide-hero slide-hero_red">
-										<div class="slide-hero__body">
-											<div class="slide-hero__content">
-												<div class="slide-hero__title" data-swiper-parallax="-300">3Application Consulting</div>
-												<div class="slide-hero__text">
-													<p>
-														Get expert guidance for your app development journey. We don’t just conduct standard discovery
-                      and
-                      audits: we dive deep into understanding your business goals and break down your initial
-                      requirements
-                      to a functional MVP. Our process provides you with detailed domain research, thorough product
-                      audits, and step-by-step recommendations, how to bring your idea to life. We not only highlight
-                      potential risks, but also propose effective alternatives to avoid them or reframe the original
-                      idea
-                      so that it perfectly meets our clients’ needs.
-													</p>
-													<ul>
-														<li>Discovery & Research</li>
-														<li>App Audits & Performance Reviews</li>
-														<li>Step-by-step recommendations</li>
-													</ul>
-												</div>
-											</div>
-											<div class="slide-hero__img slide-hero__img_2" data-swiper-parallax="-100" style="bottom: 5px; left: -31%; width: 154%;">
-												<picture>
-													<source media="(max-width: 600px)" srcset="./assets/img/hero/2-600.webp" type="image/webp">
-													<source media="(max-width: 1200px)" srcset="./assets/img/hero/2-1200.webp" type="image/webp">
-													<img alt="" src="./assets/img/hero/2.webp">
-												</picture>
-											</div>
-											<div class="slide-hero__body-bg">
-												<svg width="968" height="463" viewbox="0 0 968 463" xmlns="http://www.w3.org/2000/svg">
-													<path d="M1051.23 232.771C1017.3 276.509 925.256 376.57 825.6 427.915L823.244 429.119C787.839 447.064 745.466 451.751 700.083 449.76C654.536 447.762 603.467 438.888 549.271 427.555C441.347 404.986 320.165 372.631 192.136 358.558L186.034 357.902C87.9269 347.585 28.8436 379.447 -6.68321 420.397C-43.3636 462.677 -57.269 517.442 -58.4964 554.588L-108.468 552.937C-106.959 507.257 -90.3677 440.558 -44.4511 387.632C2.6193 333.376 78.2343 296.29 191.264 308.176L197.524 308.849C328.915 323.295 455.053 356.77 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.206 396.905 800.638 384.521L802.768 383.432C892.925 336.963 979.607 243.523 1011.73 202.121L1051.23 232.771Z"></path>
-													<path d="M-214.772 74.0025C-40.0155 -20.5151 96.8396 -23.7497 224.014 19.1831C286.634 40.3231 346.107 72.3732 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641L592.581 226C688.007 282.969 769.558 272.112 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.088 164.723 936.188 237.481 858.307 280.342C779.331 323.806 678.816 335.68 567.028 268.977L564.385 267.386C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.97 379.702 151.255C321.285 115.796 265.478 85.9534 208.021 66.5566C95.0418 28.4158 -27.4434 29.5297 -190.986 117.982L-214.772 74.0025Z"></path>
-													<path d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.3559 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z"></path>
-												</svg>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="hero__container">
-						<ul class="hero__stack stack">
-							<li class="stack__item">
-								<img src="data:image/png;base64,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" alt="">
-								<div class="stack__item-text">Flutter</div>
+				<div class="header__menu menu">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link">Portfolio</a>
 							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,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" alt="">
-								<div class="stack__item-text">Swift</div>
+							<li class="menu__item">
+								<a href="#" class="menu__link">How We Work</a>
 							</li>
-							<li class="stack__item">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/stack/as-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/stack/as-1200.webp" type="image/webp">
-									<img alt="" src="./assets/img/stack/as.webp">
-								</picture>
-								<div class="stack__item-text">Android Studio</div>
+							<li class="menu__item">
+								<a href="#" class="menu__link">Pricing</a>
 							</li>
-							<li class="stack__item">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/stack/kotlin-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/stack/kotlin-1200.webp" type="image/webp">
-									<img alt="" src="./assets/img/stack/kotlin.webp">
-								</picture>
-								<div class="stack__item-text">Kotlin</div>
-							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,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" alt="">
-								<div class="stack__item-text">Java</div>
-							</li>
-							<li class="stack__item">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/stack/react-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/stack/react-1200.webp" type="image/webp">
-									<img alt="" src="./assets/img/stack/react.webp">
-								</picture>
-								<div class="stack__item-text">React Native</div>
-							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,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" alt="">
-								<div class="stack__item-text">Xamarin</div>
-							</li>
-							<li class="stack__item">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/stack/xcode-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/stack/xcode-1200.webp" type="image/webp">
-									<img alt="" src="./assets/img/stack/xcode.webp">
-								</picture>
-								<div class="stack__item-text">Xcode</div>
-							</li>
-							<li class="stack__item">
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/stack/obj-c-600.webp" type="image/webp">
-									<source media="(max-width: 1200px)" srcset="./assets/img/stack/obj-c-1200.webp" type="image/webp">
-									<img alt="" src="./assets/img/stack/obj-c.webp">
-								</picture>
-								<div class="stack__item-text">Objective-C</div>
-							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQDSURBVHgB7ZpLbhNBEIb/mgALWGDYI404AeEERoAQz4QdsMFwAZw1II9Z8zAniLNBLIMgRCJEMSdwjjBZR0qM2BHsonqcEMgDunpKnrHEJ9mWk+6a/qef9XsIOeDpSgWD6D6YqvLtnPwp9q589jJw5Lhv6VWAUrnGPL2YnUMOCIHwzdN1qd0Ao4IQdIJ/J5VXEio8QgB841RbPl4Fi81HLK82zzxMEIBaMN863QLRfRRNxI0Q0SrB2TBmPEJZcKLrtaqqim9BWaBimbPlEbvDBM1qivv3cH+iKr0bo3zEml7WDOni5+1hRP5t8xdM2T5bToi82+YlODtgFLMF+aFoW9A+PM54Cab5Xk9W6B7KiqJt/j3MtIqywuzdNs2iNY+yEpF32/wFR4O5Ug5rRkrPZ9/5FvcWnM3j/qCJskFINMVVqzQt9FoyX3Llo6Ywq9NE9bZEHzZr8tFC0TixL9vqERe0D9P7jRkZ3g/kqilGjcxZDFANEesIdjx+Xf9apSYZy5SEqspX/9OYyvGQG8vouNVYs0AdxBHkZPHkZo8Y2cGEFYJ5HfH1N7S27x+feVrepyTebnZGGB5tJ+T1XJUN7iO4hxfvcJUJ7uoxApC6fwpe4qpMsNl/pqAkQzqSlfkCjc7TWrjHiTR4BYFi97HECVw8n3zblemjjWV+hQDUgp1YGcINWDEUq4/HqMvwV49vleCFO1wzFbvMtSCxu9TkhtU1FXQHDzIUOyR/PNemFbbPhz/ezVbPGEY8vYJpI4+sInPa3uKR3p2CIesnMA07vGP527SAqaf1fcI0nq2n5SBjT0tzSPGg4juP/3tah8HGyb8c8Szj9eTk5RXPf0gPYOppHeubxrP3tH4Apon/mQ3TeG3fgt6Cb76lDoY/RpvwuJOdxVPkJ8UWvvgWVi1afcYDWGITr4Wr7nEIP1SCXS+z0jT7K5dl1OSJRyL2Er3WVFFvS5LDNk1FX6RmkGiSeXuRZqAkaB/ORA+HYwoLnOiBdzy3/dSlTtB0yO1pZSnj8JwdQ3HE2+d47PBJUsZoTzzncnC29XTwTVb32xS8h+cWjG5DDu7OxBOLRpNN8dEY55+sYcSEm3jdRlXetz0txrgQdpbuNhJ5t/O0Rohe8FCstfMxMnSCu40axlisQ9vDYy3W4S84W43Hb87uRdHDZOppFYVCcImf01KgmcPlfU5LQXGeFm19RQFoBNt6UJPNQh6Q0SxahXhQ1mgWLUMPKmqjIPwFTzY7sPKgMPD2oKzRLloGHhS35OalKAid4KyXKUE4IvaZyoOyJswA6CZyppZf7nW05YbZup4BhO3Dk4l7RkrhQcmv9CUQ67CweGrbFk+MXU8rHW5jzrwfzBW15x7ET+sLO8wPVekjAAAAAElFTkSuQmCC" alt="">
-								<div class="stack__item-text">Figma</div>
-							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAzCAYAAADVY1sUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQsSURBVHgB7ZpNaBNBFMffbLRQmoPkYqEg0fRUUHPQtJSC8dA2J2nQi1BoPFXwoCLosfXkBxR7EFE82IDHQutFEnswQq22KjY9lB6aUouFFKFWSA+WJuO8rZPOTjbZj6bppuQHm92ZzG7mP2/em7e7AajhLEipL0PQFsxB7gJRwAsHCM3BsgK5DzH4mijWRldIt9J6CygdYF8fA2exTCgZjMHnqPxFgZCQEhihlPSBkyF0JJ6buSZWucQCs8QwUNIPjof4m5Umb4quvuE1eSHMHyJs9wCqBuL3QVMyBasLWFJ4NSXoE9UFIeRm/hg/OqHdr5Dsd6hCXNTlfQtTP1SLENj2QpWyDdtB3KtCKFCnhVnLKHBIqAlxGkfMNDrubtSU1zLpku0b6tzgZhsns5WBTbaZ5XHoieY3+0avGp5jSoh84dezI2yLFm1/PXADOptDptvL4G/Jg2eEqak1NPlIU+5puVL0h7BeFIHWsyLCLqaEzKVn1Y2D06bXr59XyvVojUpg2tllq+Coy1aRrYHiJxbjUAlMC8EpMj4/qqmTR18uy+L3E0vhF+e6GH1w9E95mtVj2RoTizHD6CaC559p9KubHUxFLQ6G0TFmlV5/JF+HEepu7LbGGmYdHDvf03IZutgANAjh2g6WhCDYQdE/cASxLIdbI2uEWeRD8XsVwLG1sstz/07HvfwxCjBycLRoP7MkF4HTFaciDgDu7WDZIggPx3rzeWjyYclz0ZLyNMSpKVoQr7svC6Ien1YmC+rQh9YyayXPkyObLMIutoXg6i6DC6U4zfTYS2QrhS0hOMdF04shuVQI5aGao2dVu1gWggLCLGRy0FeezzzVtEGr6EUjt1SXsZARG2FZiBwydyJNXJOLyWKL4S5T6EUsCWk/0VEwx+fSSfVYXgD1MmTZH07bXMX1sCQEY7+I2HkzGTIKkVOcii+IYWmE9SKObBXsqOz44oKHYvGmrRxiTAnhOZGIXi61k7ZrV2Y9K4pW8bFI9uzSS9V6KBwHTPYdM0LVZ7/sGaqfPX7sKdYIE0NxZLGzxdKQpfWUmgTWuerUsqfew6LTJiz8mlfLW9kt+Lb6Bc41BfIdxj1eH30Q6/m5nJ9/VtTrFmGcPf9NGloER0x0cBzNUpktTrcxnfsWcVRT64vqim6UV6GFX7DQPrXyEYz4/+z3fEQhyis4AFCgz+PT+N8SE5pmqY6ZJy+U0sg7mInaShrLCXZ2J4QnYS/UnjQ6jcMm5OgsVCnslYjqXPm3ut0k8NuBr6ONWI7T6ZN4sDu1KLkPVQYLvYP8WPOevZu0vme7IFQDFBJxmL7Iixpnr6f1YbZzvL9Q1se/oPY1j+5fOLqgbYCQXbM5B7pBKQyzlbzADYr+qSYEbd4sZIMElLOsUfnugCxDN9gH2yizQkM0AYkNqFGjcvwDDqGlgrzSUdkAAAAASUVORK5CYII=" alt="">
-								<div class="stack__item-text">Adobe XD</div>
-							</li>
-							<li class="stack__item">
-								<img src="data:image/png;base64,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" alt="">
-								<div class="stack__item-text">Sketch</div>
+							<li class="menu__item">
+								<a href="#" class="menu__link">FAQ</a>
 							</li>
 						</ul>
+					</nav>
+				</div>
+				<a href="#" class="header__btn btn">Get in Touch</a>
+			</div>
+		</header>
+		<main class="page page--home">
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__header">
+						<h1 class="hero__title">
+							Full dedicated
+							<br>
+							team for your project
+						</h1>
+						<div class="hero__text">
+							<p>We offer tailored, cost-optimized Mobile Apps development solutions</p>
+						</div>
+						<a href="#" class="hero__btn btn --icon-arrow btn_arr">View Portfolio</a>
 					</div>
-				</section>
-				<section class="page__portfolio portfolio">
-					<div class="portfolio__container">
-						<h2 class="portfolio__title">Portfolio</h2>
-						<div data-fls-tabs="" class="portfolio__tabs tabs">
-							<nav data-fls-tabs-titles="" class="tabs__navigation">
-								<button type="button" class="tabs__title --tab-active">E-commerce</button>
-								<button type="button" class="tabs__title">Finance</button>
-								<button type="button" class="tabs__title">Social Media</button>
-								<button type="button" class="tabs__title">Other</button>
-							</nav>
-							<div data-fls-tabs-body="" class="tabs__content">
-								<div class="tabs__body">
-									<div class="tabs-item" data-fls-showmore="items">
-										<div class="tabs-item__wrapper" data-fls-showmore-content="1">
-											<div class="tabs-item__header">
-												<div class="tabs-item__img">
-													<picture>
-														<source media="(max-width: 600px)" srcset="./assets/img/portfolio/1-600.webp" type="image/webp">
-														<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/1-1200.webp" type="image/webp">
-														<img alt="" src="./assets/img/portfolio/1.webp">
-													</picture>
-												</div>
-												<h3 class="tabs-item__title-mob">Pharma App</h3>
-												<div class="tabs-item__inner-pc">
-													<h3 class="tabs-item__title">Pharma App</h3>
-													<div class="tabs-item__info-list">
-														<div class="tabs-item__info">
-															<span>Industry:</span>
-															<span>E-commerce / Finance</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Number of Employees:</span>
-															<span>120+</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Headquarters:</span>
-															<span>Great Britain, London</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Platform:</span>
-															<span>IOS</span>
-														</div>
-													</div>
-													<div class="tabs-item__request">
-														<div class="tabs-item__request-title">Client Request:</div>
-														<div class="tabs-item__request-text">
-															<p>
-																Develop a high-performance pharmaceutical application exclusively for iOS, designed to help
-                          users
-                          find detailed information about medicines and locate the nearest pharmacy for purchase. The
-                          app
-                          must be scalable, capable of handling large-scale user traffic while ensuring a fast,
-                          intuitive
-                          and comfortable user experience.
-															</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tabs-item__body">
-												<div class="tabs-item__inner-mob">
-													<div class="tabs-item__info-list">
-														<div class="tabs-item__info">
-															<span>Industry:</span>
-															<span>E-commerce / Finance</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Number of Employees:</span>
-															<span>120+</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Headquarters:</span>
-															<span>Great Britain, London</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Platform:</span>
-															<span>IOS</span>
-														</div>
-													</div>
-													<div class="tabs-item__request">
-														<div class="tabs-item__request-title">Client Request:</div>
-														<div class="tabs-item__request-text">
-															<p>
-																Develop a high-performance pharmaceutical application exclusively for iOS, designed to help
-                          users
-                          find detailed information about medicines and locate the nearest pharmacy for purchase. The
-                          app
-                          must be scalable, capable of handling large-scale user traffic while ensuring a fast,
-                          intuitive
-                          and comfortable user experience.
-															</p>
-														</div>
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Key Tasks:</div>
-													<div class="tabs-item__block-text">
-														Real-Time Market Data:
-                      Design and implement a user-friendly UI to display stock market data in real-time.
-                      Integrate with stock exchange APIs to fetch up-to-date information.
-                      Portfolio Management:
-                      Enable users to track, manage and trade stocks within their personalized portfolio.
-                      In-App Payments:
-                      Support secure and seamless transactions for buying and selling stocks.
-                      Interactive Analytics:
-                      Develop interactive charting tools to visualize stock trends, performance and market analysis.
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Results:</div>
-													<div class="tabs-item__block-text">
-														Delivered a precise and user-friendly stock trading and portfolio management app.
-                      Implemented real-time updates and advanced analytics.
-                      Provided an intuitive UI for seamless portfolio management.
-                      Developed interactive and easy-to-use charting tools, enabling users to manage market trends and
-                      stock performance easily.
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Solution:</div>
-													<div class="tabs-item__block-text">
-														Technologies:
-                      Languages: Swift, JavaScript
-                      Frameworks: UIKit, Combine, CoreData, URLSession / RSocket, GCD
-                      Key Features:
-                      Real-Time Updates: Integrated WebSocket connections to provide live market data.
-                      Interactive UI: Built dynamic, touch-enabled charts for data visualization.
-                      Security: Ensured secure payment processing and sensitive data encryption
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Team:</div>
-													<div class="tabs-item__block-text">
-														14 people:
-                      Project Manager (1)
-                      Business Analysts (3)
-                      iOS Developers (4)
-                      Android Developers (4)
-                      QA Specialists (2)
-                      Timeline:
-                      5 months (~ 8500 hours)
-													</div>
-												</div>
+				</div>
+				<div class="hero__slider-wrapper">
+					<div class="hero__container">
+						<div class="hero__slider swiper" data-fls-slider="">
+							<div class="hero__swiper swiper-wrapper">
+								<div class="hero__slide swiper-slide slide-hero slide-hero_blue">
+									<div class="slide-hero__body">
+										<div class="slide-hero__content">
+											<div class="slide-hero__title" data-swiper-parallax="-300">2Application Consulting</div>
+											<div class="slide-hero__text">
+												<p>
+													Get expert guidance for your app development journey. We don’t just conduct standard discovery
+													and
+													audits: we dive deep into understanding your business goals and break down your initial
+													requirements
+													to a functional MVP. Our process provides you with detailed domain research, thorough product
+													audits, and step-by-step recommendations, how to bring your idea to life. We not only
+													highlight
+													potential risks, but also propose effective alternatives to avoid them or reframe the original
+													idea
+													so that it perfectly meets our clients’ needs.
+												</p>
+												<ul>
+													<li>Discovery & Research</li>
+													<li>App Audits & Performance Reviews</li>
+													<li>Step-by-step recommendations</li>
+												</ul>
 											</div>
 										</div>
-										<button hidden data-fls-showmore-button="" type="button" class="tabs-item__btn-more btn-more">
-											<span>Read More</span>
-											<span>Сlose</span>
-										</button>
+										<div class="slide-hero__img slide-hero__img_2" data-swiper-parallax="-100"
+											style="bottom: 5px; left: -31%; width: 154%;">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/2-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/2-1200.webp" type="image/webp">
+												<img alt="" src="./assets/img/hero/2.webp">
+											</picture>
+										</div>
+										<div class="slide-hero__body-bg">
+											<svg width="968" height="463" viewbox="0 0 968 463" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M1051.23 232.771C1017.03 276.853 923.803 378.149 823.243 429.119C787.839 447.064 745.465 451.752 700.082 449.761C654.536 447.763 603.467 438.888 549.271 427.555C439.634 404.628 316.314 371.602 186.034 357.902C87.9267 347.585 28.8434 379.447 -6.68345 420.397C-43.3639 462.677 -57.2693 517.442 -58.4966 554.588L-108.469 552.937C-106.959 507.257 -90.3679 440.558 -44.4513 387.632C2.61906 333.376 78.2341 296.29 191.264 308.176C324.905 322.23 453.395 356.424 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.205 396.905 800.638 384.521C891.557 338.437 979.354 243.849 1011.73 202.121L1051.23 232.771Z">
+												</path>
+												<path
+													d="M-214.772 74.0026C-40.0155 -20.515 96.8396 -23.7496 224.014 19.1832C286.634 40.3232 346.107 72.3733 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641C686.721 283.137 769.049 272.392 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.089 164.723 936.188 237.481 858.307 280.342C778.709 324.148 677.231 335.865 564.385 267.387C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.971 379.702 151.255C321.285 115.796 265.478 85.9535 208.021 66.5567C95.0418 28.4158 -27.4434 29.5298 -190.986 117.983L-214.772 74.0026Z">
+												</path>
+												<path
+													d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.356 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z">
+												</path>
+											</svg>
+										</div>
 									</div>
-									<div class="tabs-item" data-fls-showmore="items">
-										<div class="tabs-item__wrapper" data-fls-showmore-content="1">
-											<div class="tabs-item__header">
-												<div class="tabs-item__img">
-													<picture>
-														<source media="(max-width: 600px)" srcset="./assets/img/portfolio/2-600.webp" type="image/webp">
-														<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/2-1200.webp" type="image/webp">
-														<img alt="" src="./assets/img/portfolio/2.webp">
-													</picture>
-												</div>
-												<div class="tabs-item__inner-pc">
-													<h3 class="tabs-item__title">Pharma App</h3>
-													<div class="tabs-item__info-list">
-														<div class="tabs-item__info">
-															<span>Industry:</span>
-															<span>E-commerce / Finance</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Number of Employees:</span>
-															<span>120+</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Headquarters:</span>
-															<span>Great Britain, London</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Platform:</span>
-															<span>IOS</span>
-														</div>
-													</div>
-													<div class="tabs-item__request">
-														<div class="tabs-item__request-title">Client Request:</div>
-														<div class="tabs-item__request-text">
-															<p>
-																Develop a high-performance pharmaceutical application exclusively for iOS, designed to help
-                          users
-                          find detailed information about medicines and locate the nearest pharmacy for purchase. The
-                          app
-                          must be scalable, capable of handling large-scale user traffic while ensuring a fast,
-                          intuitive
-                          and comfortable user experience.
-															</p>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tabs-item__body">
-												<div class="tabs-item__inner-mob">
-													<h3 class="tabs-item__title">Pharma App</h3>
-													<div class="tabs-item__info-list">
-														<div class="tabs-item__info">
-															<span>Industry:</span>
-															<span>E-commerce / Finance</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Number of Employees:</span>
-															<span>120+</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Headquarters:</span>
-															<span>Great Britain, London</span>
-														</div>
-														<div class="tabs-item__info">
-															<span>Platform:</span>
-															<span>IOS</span>
-														</div>
-													</div>
-													<div class="tabs-item__request">
-														<div class="tabs-item__request-title">Client Request:</div>
-														<div class="tabs-item__request-text">
-															<p>
-																Develop a high-performance pharmaceutical application exclusively for iOS, designed to help
-                          users
-                          find detailed information about medicines and locate the nearest pharmacy for purchase. The
-                          app
-                          must be scalable, capable of handling large-scale user traffic while ensuring a fast,
-                          intuitive
-                          and comfortable user experience.
-															</p>
-														</div>
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Key Tasks:</div>
-													<div class="tabs-item__block-text">
-														Real-Time Market Data:
-                      Design and implement a user-friendly UI to display stock market data in real-time.
-                      Integrate with stock exchange APIs to fetch up-to-date information.
-                      Portfolio Management:
-                      Enable users to track, manage and trade stocks within their personalized portfolio.
-                      In-App Payments:
-                      Support secure and seamless transactions for buying and selling stocks.
-                      Interactive Analytics:
-                      Develop interactive charting tools to visualize stock trends, performance and market analysis.
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Results:</div>
-													<div class="tabs-item__block-text">
-														Delivered a precise and user-friendly stock trading and portfolio management app.
-                      Implemented real-time updates and advanced analytics.
-                      Provided an intuitive UI for seamless portfolio management.
-                      Developed interactive and easy-to-use charting tools, enabling users to manage market trends and
-                      stock performance easily.
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Solution:</div>
-													<div class="tabs-item__block-text">
-														Technologies:
-                      Languages: Swift, JavaScript
-                      Frameworks: UIKit, Combine, CoreData, URLSession / RSocket, GCD
-                      Key Features:
-                      Real-Time Updates: Integrated WebSocket connections to provide live market data.
-                      Interactive UI: Built dynamic, touch-enabled charts for data visualization.
-                      Security: Ensured secure payment processing and sensitive data encryption
-													</div>
-												</div>
-												<div class="tabs-item__block">
-													<div class="tabs-item__block-title">Team:</div>
-													<div class="tabs-item__block-text">
-														14 people:
-                      Project Manager (1)
-                      Business Analysts (3)
-                      iOS Developers (4)
-                      Android Developers (4)
-                      QA Specialists (2)
-                      Timeline:
-                      5 months (~ 8500 hours)
-													</div>
-												</div>
+								</div>
+								<div class="hero__slide swiper-slide slide-hero">
+									<div class="slide-hero__body">
+										<div class="slide-hero__content">
+											<div class="slide-hero__title" data-swiper-parallax="-300">1Application Consulting</div>
+											<div class="slide-hero__text">
+												<p>
+													Get expert guidance for your app development journey. We don’t just conduct standard discovery
+													and
+													audits: we dive deep into understanding your business goals and break down your initial
+													requirements
+													to a functional MVP. Our process provides you with detailed domain research, thorough product
+													audits, and step-by-step recommendations, how to bring your idea to life. We not only
+													highlight
+													potential risks, but also propose effective alternatives to avoid them or reframe the original
+													idea
+													so that it perfectly meets our clients’ needs.
+												</p>
+												<ul>
+													<li>Discovery & Research</li>
+													<li>App Audits & Performance Reviews</li>
+													<li>Step-by-step recommendations</li>
+												</ul>
 											</div>
 										</div>
-										<button hidden data-fls-showmore-button="" type="button" class="tabs-item__btn-more btn-more">
-											<span>Read More</span>
-											<span>Сlose</span>
-										</button>
+										<div class="slide-hero__img slide-hero__img_1" data-swiper-parallax="-100">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/1-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/1-1200.webp" type="image/webp">
+												<img alt="" src="./assets/img/hero/1.webp">
+											</picture>
+										</div>
+										<div class="slide-hero__body-bg">
+											<svg width="968" height="463" viewbox="0 0 968 463" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M1051.23 232.771C1017.3 276.509 925.256 376.57 825.6 427.915L823.244 429.119C787.839 447.064 745.466 451.751 700.083 449.76C654.536 447.762 603.467 438.888 549.271 427.555C441.347 404.986 320.165 372.631 192.136 358.558L186.034 357.902C87.9269 347.585 28.8436 379.447 -6.68321 420.397C-43.3636 462.677 -57.269 517.442 -58.4964 554.588L-108.468 552.937C-106.959 507.257 -90.3677 440.558 -44.4511 387.632C2.6193 333.376 78.2343 296.29 191.264 308.176L197.524 308.849C328.915 323.295 455.053 356.77 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.206 396.905 800.638 384.521L802.768 383.432C892.925 336.963 979.607 243.523 1011.73 202.121L1051.23 232.771Z"
+													fill="#C88E4D"></path>
+												<path
+													d="M-214.772 74.0025C-40.0155 -20.5151 96.8396 -23.7497 224.014 19.1831C286.634 40.3231 346.107 72.3732 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641L592.581 226C688.007 282.969 769.558 272.112 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.088 164.723 936.188 237.481 858.307 280.342C779.331 323.806 678.816 335.68 567.028 268.977L564.385 267.386C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.97 379.702 151.255C321.285 115.796 265.478 85.9534 208.021 66.5566C95.0418 28.4158 -27.4434 29.5297 -190.986 117.982L-214.772 74.0025Z"
+													fill="#C88E4D"></path>
+												<path
+													d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.3559 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z"
+													fill="#C88E4D"></path>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="hero__slide swiper-slide slide-hero slide-hero_red">
+									<div class="slide-hero__body">
+										<div class="slide-hero__content">
+											<div class="slide-hero__title" data-swiper-parallax="-300">3Application Consulting</div>
+											<div class="slide-hero__text">
+												<p>
+													Get expert guidance for your app development journey. We don’t just conduct standard discovery
+													and
+													audits: we dive deep into understanding your business goals and break down your initial
+													requirements
+													to a functional MVP. Our process provides you with detailed domain research, thorough product
+													audits, and step-by-step recommendations, how to bring your idea to life. We not only
+													highlight
+													potential risks, but also propose effective alternatives to avoid them or reframe the original
+													idea
+													so that it perfectly meets our clients’ needs.
+												</p>
+												<ul>
+													<li>Discovery & Research</li>
+													<li>App Audits & Performance Reviews</li>
+													<li>Step-by-step recommendations</li>
+												</ul>
+											</div>
+										</div>
+										<div class="slide-hero__img slide-hero__img_2" data-swiper-parallax="-100"
+											style="bottom: 5px; left: -31%; width: 154%;">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/hero/2-600.webp" type="image/webp">
+												<source media="(max-width: 1200px)" srcset="./assets/img/hero/2-1200.webp" type="image/webp">
+												<img alt="" src="./assets/img/hero/2.webp">
+											</picture>
+										</div>
+										<div class="slide-hero__body-bg">
+											<svg width="968" height="463" viewbox="0 0 968 463" xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M1051.23 232.771C1017.3 276.509 925.256 376.57 825.6 427.915L823.244 429.119C787.839 447.064 745.466 451.751 700.083 449.76C654.536 447.762 603.467 438.888 549.271 427.555C441.347 404.986 320.165 372.631 192.136 358.558L186.034 357.902C87.9269 347.585 28.8436 379.447 -6.68321 420.397C-43.3636 462.677 -57.269 517.442 -58.4964 554.588L-108.468 552.937C-106.959 507.257 -90.3677 440.558 -44.4511 387.632C2.6193 333.376 78.2343 296.29 191.264 308.176L197.524 308.849C328.915 323.295 455.053 356.77 559.505 378.613C613.182 389.838 660.971 397.997 702.274 399.809C743.74 401.628 776.206 396.905 800.638 384.521L802.768 383.432C892.925 336.963 979.607 243.523 1011.73 202.121L1051.23 232.771Z">
+												</path>
+												<path
+													d="M-214.772 74.0025C-40.0155 -20.5151 96.8396 -23.7497 224.014 19.1831C286.634 40.3231 346.107 72.3732 405.645 108.512C435.436 126.595 465.523 145.878 496.085 165.436C526.732 185.048 557.92 204.977 590.324 224.641L592.581 226C688.007 282.969 769.558 272.112 834.2 236.537C901.069 199.736 950.864 135.634 975.817 87.7204L1020.16 110.815C992.088 164.723 936.188 237.481 858.307 280.342C779.331 323.806 678.816 335.68 567.028 268.977L564.385 267.386C531.4 247.371 499.737 227.134 469.135 207.551C438.448 187.913 408.888 168.97 379.702 151.255C321.285 115.796 265.478 85.9534 208.021 66.5566C95.0418 28.4158 -27.4434 29.5297 -190.986 117.982L-214.772 74.0025Z">
+												</path>
+												<path
+													d="M496.999 -61.4931C509.928 -0.132578 571.994 80.7523 657.585 109.987C699.459 124.289 746.93 126.219 797.581 107.261C848.519 88.1952 904.343 47.3559 961.164 -26.716L1000.84 3.71576C939.907 83.1435 876.982 130.93 815.108 154.088C752.949 177.354 693.546 175.105 641.425 157.303C539.025 122.328 464.609 27.294 448.073 -51.1838L496.999 -61.4931Z">
+												</path>
+											</svg>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-				<section class="page__build-app-block build-app-block">
-					<div class="build-app-block__container">
-						<div class="build-app-block__body">
-							<div class="build-app-block__item build-app">
-								<h2 class="build-app__title">Let's build your App</h2>
-								<form class="build-app__form form" action="#" method="post">
-									<div class="form__row">
-										<label class="form__label" for="name">Name</label>
-										<div class="form__input">
-											<input id="name" type="text" name="name" placeholder="John" data-error="Ошибка" required autocomplete="name">
+				</div>
+				<div class="hero__container">
+					<ul class="hero__stack stack">
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,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"
+								alt="">
+							<div class="stack__item-text">Flutter</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,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"
+								alt="">
+							<div class="stack__item-text">Swift</div>
+						</li>
+						<li class="stack__item">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/stack/as-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/stack/as-1200.webp" type="image/webp">
+								<img alt="" src="./assets/img/stack/as.webp">
+							</picture>
+							<div class="stack__item-text">Android Studio</div>
+						</li>
+						<li class="stack__item">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/stack/kotlin-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/stack/kotlin-1200.webp" type="image/webp">
+								<img alt="" src="./assets/img/stack/kotlin.webp">
+							</picture>
+							<div class="stack__item-text">Kotlin</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,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"
+								alt="">
+							<div class="stack__item-text">Java</div>
+						</li>
+						<li class="stack__item">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/stack/react-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/stack/react-1200.webp" type="image/webp">
+								<img alt="" src="./assets/img/stack/react.webp">
+							</picture>
+							<div class="stack__item-text">React Native</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAA9CAYAAAAUPs+7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAA4oSURBVHgB1VsLXFRVGj/n3DvMmzcM4PAGAU3LAB+rIlmS+KhMUdMya7Vc01ofmZW5i23lWmlrpqYlZqWURbkiiVkiKpIrWsaPfALyBnnDDMzj3rvnXMCYYWDuDJD098fP4d4595zzne98/+/7nwsEvQOFfxiP2KVebpNnvIIaW6I5BDjAQQ78AYCQgwBwCAGYW5ebvqn02w+u4ss0/jECOwGB/eCN8Zf9xVsphfvylpIiDlBUb55nNzgMqacnNIr0adnTPabiSyL8YwB2oFcTiNye9xKtcNvIaBpZ/CQE7ixYxOEFcRUnn5szaB6wE/ZOgvKITVAogsM2MtpGZgAYgwCxkAEOUtfHgue+6gvaPNhm2OMhpA03+svK08bqmtEAiezquL/AsQwj9fcrPT1V5g/ax2pLe3tWFkYs2XEXguKxgBINBM8wAUQUZazX+kW8uG8KsGPBbW1ADMCOTakra628pYIQDjiD8MBuIvcLNpycSktBe/AX2tTWCXF3JabPMTbpvQesMQiwm2jLisX3bDn/Jv6NtaWpLZMi/M65RsclM9oGwRa/U2CNBs4xfPjLqrjVMmDDPG3aMvcmXd+F9HARdsk7km/YCpyesJRYdOrc04GxQGCAFWo55DdunovCXb2Y9AL+JMDbGopdPCeoH38rBAicKxT4HW50SvU5Y3nVvZhZBhTNWgOOr0ZMw7WYhlVAgJcIsRoMW/ZxFDRQ0YAeeDRrDTi+0sbaJs+Il76YLej7Vu7zNDvucEt1S/FNF/xwqwbBXtrlWl/tMovPZllyo8d2JFlzDAnjTsRBUuP0SMPWDALv2Zi5SKQK2sXpWqx8FZedtJTR1ZdnQ46TdFxkjK16ZdCIoa23iuWIFtHAHuAJIZmzUVdx/X+QcpB0uqGTqgJH6DUNUgh7tgoEkGNo444Li8Kf6/l73YO3ZMwRjtMWXcP1Cuw5duDxcEbD1pznIl4wv4WpTz74+beatcWFLLS97uHEnl6w/Ksdg/P3r7lmfnPImoPzFeFjPmP1VhaMA6xM7Ydyt7/pVPtdogZ04yU9DY6JSio4oC3Jt24MApZjZQGhz3tHTiO8b/L9ymPvaJoLf9uMaNpmusbMiVek4YQFY/B9eMTM+pTRaa0nX3ghNHhBwuYtPg7ajGFxLN0ZBAZMWeol8fCcCzhG2IriDrU3r3MBK3Z8Dbpan7q4bPgqqa8fQzY0EA5G4ROEsrYsmQa6Vq9M1La8LZqyfCA0a4YIQSR1jA772+7hwAaD8NTkvfyNY603ixmrEcukQwrQYpfJg9ZsVZtNgF+RxpzTTyKJUjBtQ4pCmrLCLSAnVQtMjUx5Rz4jkwWG/h2wrC0RG+qqyhnP+PkZoC2l7zJ/S5OlhqzaP8YpcvIpQ2MNsBXYxY1ST6+bp2c6hQBT3ucZa8KRlhpNUZETb72eH8TIA0Kpk/H8gvBtO42ZG/15yY/GRm2MoO1sBkqqAE2Xs57Oe2vmXmCWl5hbqE0jjZt71FBfZVe9gt2SYrSG4MANB8YDU4PzK1KSnhIndvGg8J0eV5aWyanKnLPzgKkx+C5856wLpmXO9wFkX4FJRC2P+x/9CCQkkPYmBjX3EBi5+dxK5OT1DmfQAbuBV1fh66/NmCZ2BBZWd2xy7a+6uuqI7lYXsyyr8PeryZwm8wSmXsZ/HvdN7eXW8lshACH7s2YGs4Crw2cXHgtc0PlyZwvTpF9FePQ7QN/au2oWT1RbVaW8++2sZ4GpS5LP1I0zn02UeaopYDmNxoKxNyo5/DEReMy/A8M3pU1gGpmwXhmDACFOIfN+wjFhsyvo5CWw0//cyL2FqWyrYTKwU4/sDPxARhoQAjMn/xNnh4nk+SZGHpWU/5Wx1fAoJggTL8UkxDq4u1w6O1s1AliMQYZGTXGBjIRc0EtgRmckbq6/nZnjPqyjrw4Pgf4JqwMdnN2nAvuFZ9POsFG1Rfkw8sM5HwILNNz09kvzFNhgne/hNqx0kD+69vFrU9rHYeJdw7Zfeq61tEzZF8YggBREOPO/K2Jl8mjQ7hyo/QPrs/C19Nay0m4TFruA96ncJ3SRa/xyEktMaDgv76Ch4WreOpys/b4AePqG2qqU6vRd5cA0kPJbxzVo2DaG1fedOMUBaKirYdzveyS9vT/eXdGQNd/c5zQ85rihuRb0NTgcIEWeHlnZCW4drGO6Bb7Tt2gKC0TkV4VvMJUxDaH2e6ZbbG/RHkOL7knUD0ceSCwD2sJLL+Qmxr/PD8r9gUfSDE23+kUWxMkVpCnJOPW8TaHAdDuSFYGV508k0DIlBUUOVMOVC2vb73UeC3IaN9VF7OH9FOonnY7VaRi3sQ/+B0RG0lA9f2O8+sEFaUatBvQXSPkt9/cvz5wqJQdIXWh0bEpzCS5iXTOn0R36pylNf12R1VpRPxIbt9/EKUiLuLpffliJXEPunmls0farLEjOSvT1zeohLyYnAAs0fCt129zKnNOkLCcTNinUAl/9fCQwSMZgN+tXcYpjDEDi5vswzdEOSvAHyKSGhhqjcuiYZfjjQfN7+h+Pnq8PyM610Ixzdh2yUNdUz2LT9bdaB1m9TolaivJ+BrR9uo1gkMw1YDD900K/WNCV1hnntZ98FLH2k2Oga1mOLq4asVTm7aO3sUq2Y4zkH3MJVV/L2SHzGmTzGagtQCIJVf/zmZfb59p5SyDlyEfcnHy95qNmKlo973XLgffUobm00qk/xW0sQqlgXU7aJn6EUXuvf8lpuZm4VOp7tyTVrzqEPTWdEgOLdU1ptq62OYrDziENDKo6HS/xARYC719Smip0FWXusLcpu6UhMkbWQeV+8ewsjyie88+/P2e+cnAwIq4N+hYcrXSjG89nTAddAyYMWrZ5GKAUowBFlBsRxdQ2eYcsT5pu/gzStvyHAzESL+/u6h/7B4jHpPQNRLmbVj1I+rldywxLPLZU6jd0G6vTgr4CVsRZscq9KGumWyCwkJSNT2sp1hbc9CFCEH+VZRlFeIg+YyJlkX5H7SvNMjY3j8Je0meejGspziCjd//8hP+zHQPjr//6j7gPFL6qBlJ7g74BJ1V5ovzUg6Q+6rKyg9cdm2Koa1bfNgY/GnxInV8qGbrtwjpgiZ4Pb42X+wUgzsYD7G7BskZ5QBBsNwa/FTsGw+fxBV9tjRO7q6yKN0KAvYMzNjedqUhakgfM5D/Sn0/MpEPGxtouxmcMrZxn0PDXQ0LiHYBZ/ZN/8N8NzTfykqwdOQgFrXChK8+kzgWdSoXOrscV7Fx5jmHZSxzD9sogHJH8A/zR5aT104AFmh2xMXO9triEtiQjEsG4qbiAc39l+35goUq+8M2KZ+T+ZAf2Lt4RmYFSSMp/2zD9C9DJG00MQjosO7krVubvby7b2QRIIagpuL67PmNvvdlzaCzbUY73jk9kDS3dTwhnBCI370dVM1YTxcxUrM7IYGqzji2nRNLesA0560HVaXs6tJ/bBrHoelG7L+8BLL0QL7Xtron3pQwnYZlTeLfucmwY9W3ZIVDWNNWq4sUYGFGQ/5Wz8fKhwEJAHnfU0NhagIUiO0RmEuxFTsqz2fN9xpnfsxStqfOLw/8q8wvk7HFLJFHQdReOPwu6lvBIPXHJICl0fggIYQl8sI6aDEOCFr8XDSyI1RXfJz/k4OJmh5dARukXhG688YJFZbA7D4B3/evY43LfYfuYlmYgFET7kKkDmk49LHEGFmhzTErdL4aKyqEACaxayRuFocFNpyaJXCw+L7kmX19X7Qeh8GSN5J46GXz3lwVBqy3ftwyYuy7uU6m3Wy1xXSAMnNjNA5WdONRBs6ZJGF5pxIDhgo3Bjw5XyeU1zkNf+5Yo411ouCp97wSZj6/wZI1s55Agrt0YFsfRnUHazlC+3jpeolIL6pCIxfrmhp9uvDfnDDAzBvk9YPbytNaqSpsDtVHTwHjEPrynfQydPZq5kbSqWJt/5QCkBJ0ZcyInN7ry+4MdWbPFhe7pQW1K/P6qLLa+bpS1fU+OVxm9Jrvq+51PMLTc8fdhwBaXIeMXKAdHrbVl+5kAHxngtv+tSt+1hpXIFLcvs0yzy92TXpeqI2YTPaMnEJoVqzxx1uxqnjWbzgP0DCokfrncZ8W7DZob5FWGHk7KSDKH19/BTQXxcebvl3ETo7YJ4Anh9nan3CxENBI5uwHzZ+sbashLKObeYwKOz5pVsCD53bDSLxJvgF68MMPjnvdz3xNJ5M/jqrCfVM3+BXkbUSRxOJH9VMAD1r4rZILtL84YdPichQKw78vvfgXWFeR+gdTJ9aMcQE4Oca8eSUKIC/MqVu3ZtMcoudOfyxiA1PMUVVuVvx4bgwQZq4wpdAvwQSjmiLZMc7PIEyLqT2EYrE0ZlaHhbMYkaC5OdQuhQY7n/dKUnTFSL7Vw3r+z4MSuKrr88L6OjFQQ5dsSJHkvif781nG2oWYi9pIBHWB5mvV0v5o1yz0CAOsv7HbAFhrkvaTkwKsPKYKDIdeZ/wYYePnBzxcV7N1AZEHzQ/MeYWss4Jqv5hgdR87A1bdjDK41BqSX4HyJ0zc0Hb625XHy5oFN29ueCbXpoan6lpZifEg90GiYvJvmH0KdnIIsyg/WYE/myJ+V1JxOnUErXQYc2xDhqO7KxRWgbbFtli/sdXk+SE04oinUFBarATVAaJg1MLKgMG3mZMr83TbBsLe2IPuSPvniwsHy0FBIRBdwB6mY4zcKwzpGhFMXP9kQBGygWXP0Nijyf1YevfPqUbG3//3GxkYa9t2RiSCQv7Sg5TKjUVP3083kxLjy1F16cIf+1L0DbYErNpYODJ41CIsif6incI4K2Jp99FZ529vOvRLHCf4PaHWZ3qvY2EsAAAAASUVORK5CYII="
+								alt="">
+							<div class="stack__item-text">Xamarin</div>
+						</li>
+						<li class="stack__item">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/stack/xcode-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/stack/xcode-1200.webp" type="image/webp">
+								<img alt="" src="./assets/img/stack/xcode.webp">
+							</picture>
+							<div class="stack__item-text">Xcode</div>
+						</li>
+						<li class="stack__item">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/stack/obj-c-600.webp" type="image/webp">
+								<source media="(max-width: 1200px)" srcset="./assets/img/stack/obj-c-1200.webp" type="image/webp">
+								<img alt="" src="./assets/img/stack/obj-c.webp">
+							</picture>
+							<div class="stack__item-text">Objective-C</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQDSURBVHgB7ZpLbhNBEIb/mgALWGDYI404AeEERoAQz4QdsMFwAZw1II9Z8zAniLNBLIMgRCJEMSdwjjBZR0qM2BHsonqcEMgDunpKnrHEJ9mWk+6a/qef9XsIOeDpSgWD6D6YqvLtnPwp9q589jJw5Lhv6VWAUrnGPL2YnUMOCIHwzdN1qd0Ao4IQdIJ/J5VXEio8QgB841RbPl4Fi81HLK82zzxMEIBaMN863QLRfRRNxI0Q0SrB2TBmPEJZcKLrtaqqim9BWaBimbPlEbvDBM1qivv3cH+iKr0bo3zEml7WDOni5+1hRP5t8xdM2T5bToi82+YlODtgFLMF+aFoW9A+PM54Cab5Xk9W6B7KiqJt/j3MtIqywuzdNs2iNY+yEpF32/wFR4O5Ug5rRkrPZ9/5FvcWnM3j/qCJskFINMVVqzQt9FoyX3Llo6Ywq9NE9bZEHzZr8tFC0TixL9vqERe0D9P7jRkZ3g/kqilGjcxZDFANEesIdjx+Xf9apSYZy5SEqspX/9OYyvGQG8vouNVYs0AdxBHkZPHkZo8Y2cGEFYJ5HfH1N7S27x+feVrepyTebnZGGB5tJ+T1XJUN7iO4hxfvcJUJ7uoxApC6fwpe4qpMsNl/pqAkQzqSlfkCjc7TWrjHiTR4BYFi97HECVw8n3zblemjjWV+hQDUgp1YGcINWDEUq4/HqMvwV49vleCFO1wzFbvMtSCxu9TkhtU1FXQHDzIUOyR/PNemFbbPhz/ezVbPGEY8vYJpI4+sInPa3uKR3p2CIesnMA07vGP527SAqaf1fcI0nq2n5SBjT0tzSPGg4juP/3tah8HGyb8c8Szj9eTk5RXPf0gPYOppHeubxrP3tH4Apon/mQ3TeG3fgt6Cb76lDoY/RpvwuJOdxVPkJ8UWvvgWVi1afcYDWGITr4Wr7nEIP1SCXS+z0jT7K5dl1OSJRyL2Er3WVFFvS5LDNk1FX6RmkGiSeXuRZqAkaB/ORA+HYwoLnOiBdzy3/dSlTtB0yO1pZSnj8JwdQ3HE2+d47PBJUsZoTzzncnC29XTwTVb32xS8h+cWjG5DDu7OxBOLRpNN8dEY55+sYcSEm3jdRlXetz0txrgQdpbuNhJ5t/O0Rohe8FCstfMxMnSCu40axlisQ9vDYy3W4S84W43Hb87uRdHDZOppFYVCcImf01KgmcPlfU5LQXGeFm19RQFoBNt6UJPNQh6Q0SxahXhQ1mgWLUMPKmqjIPwFTzY7sPKgMPD2oKzRLloGHhS35OalKAid4KyXKUE4IvaZyoOyJswA6CZyppZf7nW05YbZup4BhO3Dk4l7RkrhQcmv9CUQ67CweGrbFk+MXU8rHW5jzrwfzBW15x7ET+sLO8wPVekjAAAAAElFTkSuQmCC"
+								alt="">
+							<div class="stack__item-text">Figma</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAzCAYAAADVY1sUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQsSURBVHgB7ZpNaBNBFMffbLRQmoPkYqEg0fRUUHPQtJSC8dA2J2nQi1BoPFXwoCLosfXkBxR7EFE82IDHQutFEnswQq22KjY9lB6aUouFFKFWSA+WJuO8rZPOTjbZj6bppuQHm92ZzG7mP2/em7e7AajhLEipL0PQFsxB7gJRwAsHCM3BsgK5DzH4mijWRldIt9J6CygdYF8fA2exTCgZjMHnqPxFgZCQEhihlPSBkyF0JJ6buSZWucQCs8QwUNIPjof4m5Umb4quvuE1eSHMHyJs9wCqBuL3QVMyBasLWFJ4NSXoE9UFIeRm/hg/OqHdr5Dsd6hCXNTlfQtTP1SLENj2QpWyDdtB3KtCKFCnhVnLKHBIqAlxGkfMNDrubtSU1zLpku0b6tzgZhsns5WBTbaZ5XHoieY3+0avGp5jSoh84dezI2yLFm1/PXADOptDptvL4G/Jg2eEqak1NPlIU+5puVL0h7BeFIHWsyLCLqaEzKVn1Y2D06bXr59XyvVojUpg2tllq+Coy1aRrYHiJxbjUAlMC8EpMj4/qqmTR18uy+L3E0vhF+e6GH1w9E95mtVj2RoTizHD6CaC559p9KubHUxFLQ6G0TFmlV5/JF+HEepu7LbGGmYdHDvf03IZutgANAjh2g6WhCDYQdE/cASxLIdbI2uEWeRD8XsVwLG1sstz/07HvfwxCjBycLRoP7MkF4HTFaciDgDu7WDZIggPx3rzeWjyYclz0ZLyNMSpKVoQr7svC6Ien1YmC+rQh9YyayXPkyObLMIutoXg6i6DC6U4zfTYS2QrhS0hOMdF04shuVQI5aGao2dVu1gWggLCLGRy0FeezzzVtEGr6EUjt1SXsZARG2FZiBwydyJNXJOLyWKL4S5T6EUsCWk/0VEwx+fSSfVYXgD1MmTZH07bXMX1sCQEY7+I2HkzGTIKkVOcii+IYWmE9SKObBXsqOz44oKHYvGmrRxiTAnhOZGIXi61k7ZrV2Y9K4pW8bFI9uzSS9V6KBwHTPYdM0LVZ7/sGaqfPX7sKdYIE0NxZLGzxdKQpfWUmgTWuerUsqfew6LTJiz8mlfLW9kt+Lb6Bc41BfIdxj1eH30Q6/m5nJ9/VtTrFmGcPf9NGloER0x0cBzNUpktTrcxnfsWcVRT64vqim6UV6GFX7DQPrXyEYz4/+z3fEQhyis4AFCgz+PT+N8SE5pmqY6ZJy+U0sg7mInaShrLCXZ2J4QnYS/UnjQ6jcMm5OgsVCnslYjqXPm3ut0k8NuBr6ONWI7T6ZN4sDu1KLkPVQYLvYP8WPOevZu0vme7IFQDFBJxmL7Iixpnr6f1YbZzvL9Q1se/oPY1j+5fOLqgbYCQXbM5B7pBKQyzlbzADYr+qSYEbd4sZIMElLOsUfnugCxDN9gH2yizQkM0AYkNqFGjcvwDDqGlgrzSUdkAAAAASUVORK5CYII="
+								alt="">
+							<div class="stack__item-text">Adobe XD</div>
+						</li>
+						<li class="stack__item">
+							<img
+								src="data:image/png;base64,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"
+								alt="">
+							<div class="stack__item-text">Sketch</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="page__portfolio portfolio">
+				<div class="portfolio__container">
+					<h2 class="portfolio__title">Portfolio</h2>
+					<div data-fls-tabs="" class="portfolio__tabs tabs">
+						<nav data-fls-tabs-titles="" class="tabs__navigation">
+							<button type="button" class="tabs__title --tab-active">E-commerce</button>
+							<button type="button" class="tabs__title">Finance</button>
+							<button type="button" class="tabs__title">Social Media</button>
+							<button type="button" class="tabs__title">Other</button>
+						</nav>
+						<div data-fls-tabs-body="" class="tabs__content">
+							<div class="tabs__body">
+								<div class="tabs-item" data-fls-showmore="items">
+									<div class="tabs-item__wrapper" data-fls-showmore-content="1">
+										<div class="tabs-item__header">
+											<div class="tabs-item__img">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/portfolio/1-600.webp"
+														type="image/webp">
+													<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/1-1200.webp"
+														type="image/webp">
+													<img alt="" src="./assets/img/portfolio/1.webp">
+												</picture>
+											</div>
+											<h3 class="tabs-item__title-mob">Pharma App</h3>
+											<div class="tabs-item__inner-pc">
+												<h3 class="tabs-item__title">Pharma App</h3>
+												<div class="tabs-item__info-list">
+													<div class="tabs-item__info">
+														<span>Industry:</span>
+														<span>E-commerce / Finance</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Number of Employees:</span>
+														<span>120+</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Headquarters:</span>
+														<span>Great Britain, London</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Platform:</span>
+														<span>IOS</span>
+													</div>
+												</div>
+												<div class="tabs-item__request">
+													<div class="tabs-item__request-title">Client Request:</div>
+													<div class="tabs-item__request-text">
+														<p>
+															Develop a high-performance pharmaceutical application exclusively for iOS, designed to
+															help
+															users
+															find detailed information about medicines and locate the nearest pharmacy for purchase.
+															The
+															app
+															must be scalable, capable of handling large-scale user traffic while ensuring a fast,
+															intuitive
+															and comfortable user experience.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tabs-item__body">
+											<div class="tabs-item__inner-mob">
+												<div class="tabs-item__info-list">
+													<div class="tabs-item__info">
+														<span>Industry:</span>
+														<span>E-commerce / Finance</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Number of Employees:</span>
+														<span>120+</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Headquarters:</span>
+														<span>Great Britain, London</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Platform:</span>
+														<span>IOS</span>
+													</div>
+												</div>
+												<div class="tabs-item__request">
+													<div class="tabs-item__request-title">Client Request:</div>
+													<div class="tabs-item__request-text">
+														<p>
+															Develop a high-performance pharmaceutical application exclusively for iOS, designed to
+															help
+															users
+															find detailed information about medicines and locate the nearest pharmacy for purchase.
+															The
+															app
+															must be scalable, capable of handling large-scale user traffic while ensuring a fast,
+															intuitive
+															and comfortable user experience.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Key Tasks:</div>
+												<div class="tabs-item__block-text">
+													Real-Time Market Data:
+													Design and implement a user-friendly UI to display stock market data in real-time.
+													Integrate with stock exchange APIs to fetch up-to-date information.
+													Portfolio Management:
+													Enable users to track, manage and trade stocks within their personalized portfolio.
+													In-App Payments:
+													Support secure and seamless transactions for buying and selling stocks.
+													Interactive Analytics:
+													Develop interactive charting tools to visualize stock trends, performance and market analysis.
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Results:</div>
+												<div class="tabs-item__block-text">
+													Delivered a precise and user-friendly stock trading and portfolio management app.
+													Implemented real-time updates and advanced analytics.
+													Provided an intuitive UI for seamless portfolio management.
+													Developed interactive and easy-to-use charting tools, enabling users to manage market trends
+													and
+													stock performance easily.
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Solution:</div>
+												<div class="tabs-item__block-text">
+													Technologies:
+													Languages: Swift, JavaScript
+													Frameworks: UIKit, Combine, CoreData, URLSession / RSocket, GCD
+													Key Features:
+													Real-Time Updates: Integrated WebSocket connections to provide live market data.
+													Interactive UI: Built dynamic, touch-enabled charts for data visualization.
+													Security: Ensured secure payment processing and sensitive data encryption
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Team:</div>
+												<div class="tabs-item__block-text">
+													14 people:
+													Project Manager (1)
+													Business Analysts (3)
+													iOS Developers (4)
+													Android Developers (4)
+													QA Specialists (2)
+													Timeline:
+													5 months (~ 8500 hours)
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="form__row">
-										<label class="form__label" for="email">Business Email</label>
-										<div class="form__input">
-											<input id="email" type="email" name="email" placeholder="john@gmail.com" data-error="Ошибка" required autocomplete="email">
+									<button hidden data-fls-showmore-button="" type="button" class="tabs-item__btn-more btn-more">
+										<span>Read More</span>
+										<span>Сlose</span>
+									</button>
+								</div>
+								<div class="tabs-item" data-fls-showmore="items">
+									<div class="tabs-item__wrapper" data-fls-showmore-content="1">
+										<div class="tabs-item__header">
+											<div class="tabs-item__img">
+												<picture>
+													<source media="(max-width: 600px)" srcset="./assets/img/portfolio/2-600.webp"
+														type="image/webp">
+													<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/2-1200.webp"
+														type="image/webp">
+													<img alt="" src="./assets/img/portfolio/2.webp">
+												</picture>
+											</div>
+											<div class="tabs-item__inner-pc">
+												<h3 class="tabs-item__title">Pharma App</h3>
+												<div class="tabs-item__info-list">
+													<div class="tabs-item__info">
+														<span>Industry:</span>
+														<span>E-commerce / Finance</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Number of Employees:</span>
+														<span>120+</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Headquarters:</span>
+														<span>Great Britain, London</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Platform:</span>
+														<span>IOS</span>
+													</div>
+												</div>
+												<div class="tabs-item__request">
+													<div class="tabs-item__request-title">Client Request:</div>
+													<div class="tabs-item__request-text">
+														<p>
+															Develop a high-performance pharmaceutical application exclusively for iOS, designed to
+															help
+															users
+															find detailed information about medicines and locate the nearest pharmacy for purchase.
+															The
+															app
+															must be scalable, capable of handling large-scale user traffic while ensuring a fast,
+															intuitive
+															and comfortable user experience.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tabs-item__body">
+											<div class="tabs-item__inner-mob">
+												<h3 class="tabs-item__title">Pharma App</h3>
+												<div class="tabs-item__info-list">
+													<div class="tabs-item__info">
+														<span>Industry:</span>
+														<span>E-commerce / Finance</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Number of Employees:</span>
+														<span>120+</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Headquarters:</span>
+														<span>Great Britain, London</span>
+													</div>
+													<div class="tabs-item__info">
+														<span>Platform:</span>
+														<span>IOS</span>
+													</div>
+												</div>
+												<div class="tabs-item__request">
+													<div class="tabs-item__request-title">Client Request:</div>
+													<div class="tabs-item__request-text">
+														<p>
+															Develop a high-performance pharmaceutical application exclusively for iOS, designed to
+															help
+															users
+															find detailed information about medicines and locate the nearest pharmacy for purchase.
+															The
+															app
+															must be scalable, capable of handling large-scale user traffic while ensuring a fast,
+															intuitive
+															and comfortable user experience.
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Key Tasks:</div>
+												<div class="tabs-item__block-text">
+													Real-Time Market Data:
+													Design and implement a user-friendly UI to display stock market data in real-time.
+													Integrate with stock exchange APIs to fetch up-to-date information.
+													Portfolio Management:
+													Enable users to track, manage and trade stocks within their personalized portfolio.
+													In-App Payments:
+													Support secure and seamless transactions for buying and selling stocks.
+													Interactive Analytics:
+													Develop interactive charting tools to visualize stock trends, performance and market analysis.
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Results:</div>
+												<div class="tabs-item__block-text">
+													Delivered a precise and user-friendly stock trading and portfolio management app.
+													Implemented real-time updates and advanced analytics.
+													Provided an intuitive UI for seamless portfolio management.
+													Developed interactive and easy-to-use charting tools, enabling users to manage market trends
+													and
+													stock performance easily.
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Solution:</div>
+												<div class="tabs-item__block-text">
+													Technologies:
+													Languages: Swift, JavaScript
+													Frameworks: UIKit, Combine, CoreData, URLSession / RSocket, GCD
+													Key Features:
+													Real-Time Updates: Integrated WebSocket connections to provide live market data.
+													Interactive UI: Built dynamic, touch-enabled charts for data visualization.
+													Security: Ensured secure payment processing and sensitive data encryption
+												</div>
+											</div>
+											<div class="tabs-item__block">
+												<div class="tabs-item__block-title">Team:</div>
+												<div class="tabs-item__block-text">
+													14 people:
+													Project Manager (1)
+													Business Analysts (3)
+													iOS Developers (4)
+													Android Developers (4)
+													QA Specialists (2)
+													Timeline:
+													5 months (~ 8500 hours)
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="form__row">
-										<label class="form__label" for="phone">Phone Number</label>
-										<div class="form__input">
-											<input id="phone" type="tel" name="phone" placeholder="+1 (___) ___ ____" data-error="Ошибка" required autocomplete="tel">
-										</div>
-									</div>
-									<div class="form__submit">
-										<button class="btn" type="submit">Send</button>
-									</div>
-								</form>
+									<button hidden data-fls-showmore-button="" type="button" class="tabs-item__btn-more btn-more">
+										<span>Read More</span>
+										<span>Сlose</span>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-				<section class="page__how-we-work how-we-work">
-					<div class="how-we-work__container">
-						<h2 class="how-we-work__title title">How We Work</h2>
-						<div data-fls-slider="" class="how-we-work__slider swiper">
-							<ul class="how-we-work__wrapper swiper-wrapper">
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">Discovery</div>
-										<span class="item-hww__count">01</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">Design</div>
-										<span class="item-hww__count">02</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">Development</div>
-										<span class="item-hww__count">03</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">QA</div>
-										<span class="item-hww__count">04</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">Deployment</div>
-										<span class="item-hww__count">05</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-								<li class="how-we-work__slide item-hww swiper-slide">
-									<div class="item-hww__header">
-										<div class="item-hww__title">Support</div>
-										<span class="item-hww__count">06</span>
-									</div>
-									<div class="item-hww__text">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
-                Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
-                lorem
-                purus, a convallis libero malesuada ac. Donec non euismod leo.
-										</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				<section class="page__pricing pricing">
-					<div class="pricing__container">
-						<h2 class="pricing__title">Pricing Model</h2>
-						<ul class="pricing__list">
-							<li class="pricing__item item-pricing">
-								<div class="item-pricing__header">
-									<h4 class="item-pricing__title">Time & Material Model</h4>
-								</div>
-								<div class="item-pricing__body">
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">Best for:</h5>
-										<div class="item-pricing__text">
-											<ul>
-												<li class="--icon-check">Unclear project scope or evolving requirements</li>
-												<li class="--icon-check">Lack of technical documentation</li>
-											</ul>
-										</div>
-									</div>
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">How It Works:</h5>
-										<div class="item-pricing__text">
-											<p>Pay only for the actual hours worked on your project</p>
-											<div class="item-pricing__row">
-												<span>Project Duration:</span>
-												<span>Any</span>
-											</div>
-											<div class="item-pricing__row">
-												<span>Billing:</span>
-												<span>Hourly-based invoicing</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</div>
-							</li>
-							<li class="pricing__item item-pricing">
-								<div class="item-pricing__header">
-									<h4 class="item-pricing__title">Fixed-Price Model</h4>
-								</div>
-								<div class="item-pricing__body">
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">Best for:</h5>
-										<div class="item-pricing__text">
-											<ul>
-												<li class="--icon-check">Well-defined project scope and specifications</li>
-												<li class="--icon-check">Availability of technical documentation</li>
-												<li class="--icon-check">Clear requirements for the mobile app</li>
-											</ul>
-										</div>
-									</div>
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">How It Works:</h5>
-										<div class="item-pricing__text">
-											<p>Develop your project with a predefined budget and cost certainty</p>
-											<div class="item-pricing__row">
-												<span>Project Duration:</span>
-												<span>1-6 months</span>
-											</div>
-											<div class="item-pricing__row">
-												<span>Billing:</span>
-												<span>Cost based on project estimates</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</div>
-							</li>
-							<li class="pricing__item item-pricing">
-								<div class="item-pricing__header">
-									<h4 class="item-pricing__title">Dedicated Team Model</h4>
-								</div>
-								<div class="item-pricing__body">
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">Best for:</h5>
-										<div class="item-pricing__text">
-											<ul>
-												<li class="--icon-check">Businesses requiring a full-time development team</li>
-												<li class="--icon-check">Companies seeking maximum control over the development process</li>
-											</ul>
-										</div>
-									</div>
-									<div class="item-pricing__block">
-										<h5 class="item-pricing__block-title">How It Works:</h5>
-										<div class="item-pricing__text">
-											<p>
-												Build a flexible team with the exact skills you need, working exclusively on your project.
-											</p>
-											<div class="item-pricing__row">
-												<span>Project Duration:</span>
-												<span>From 1 month</span>
-											</div>
-											<div class="item-pricing__row">
-												<span>Billing:</span>
-												<span>Monthly fixed price</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</div>
-							</li>
-						</ul>
-						<a href="#" class="pricing__btn btn">get free estimate</a>
-					</div>
-				</section>
-				<section class="page__questions questions">
-					<div class="questions__container">
-						<h2 class="questions__title">Frequently Asked Questions</h2>
-						<div data-fls-spollers="" class="spollers">
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What programming languages do you use for mobile app development?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services. We create scalable,
-            high-performance applications that perfectly meet your expectations. We’re used to implement
-									<a href="#">Combine</a>
-									for
-            reactive programming,
-									<a href="#">SPM</a>
-									for dependency management, and URLSession or Alamofire for networking. Our process
-            is powered by industry-leading tools such as
-									<a href="#">Xcode</a>
-									,
-									<a href="#">Instruments</a>
-									, XCTest and CI/CD integrations to ensure a
-            seamless workflow and exceptional app quality.
-            Talking about user interface development, we specialize in developing flexible, reusable components that
-            adhere precisely to Apple's Human Interface Guidelines (HIG). Our primary frameworks, UIKit and SwiftUI,
-            enable us to craft adaptive and high-quality user interfaces. 
-            Additionally, we maintain support for legacy approaches such as Storyboards and Xibs. And we seamlessly
-            integrate third-party frameworks like Lottie and SnapKit to further enhance functionality and visual appeal.
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What iOS development frameworks and tools do you use?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services. We create scalable,
-            high-performance applications that perfectly meet your expectations. We’re used to implement
-									<a href="#">Combine</a>
-									for
-            reactive programming,
-									<a href="#">SPM</a>
-									for dependency management, and URLSession or Alamofire for networking. Our process
-            is powered by industry-leading tools such as
-									<a href="#">Xcode</a>
-									,
-									<a href="#">Instruments</a>
-									, XCTest and CI/CD integrations to ensure a
-            seamless workflow and exceptional app quality.
-            Talking about user interface development, we specialize in developing flexible, reusable components that
-            adhere precisely to Apple's Human Interface Guidelines (HIG). Our primary frameworks, UIKit and SwiftUI,
-            enable us to craft adaptive and high-quality user interfaces. 
-            Additionally, we maintain support for legacy approaches such as Storyboards and Xibs. And we seamlessly
-            integrate third-party frameworks like Lottie and SnapKit to further enhance functionality and visual appeal.
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">Do you use reactive programming in app development?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">How do you handle concurrency in iOS development?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What mapping and location services do you integrate in mobile apps?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">How do you handle networking and API integrations?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What tools do you use for dependency management?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">How do you ensure app quality and testing?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">Do you use CI/CD (Continuous Integration / Continuous Deployment)?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What utilities and tools do you use for code quality?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-							<details class="spollers__item">
-								<summary class="spollers__title --icon-arr-spoller">
-									<div class="spollers__title-text">What architectural approaches do you use in app development?</div>
-								</summary>
-								<div class="spollers__body">
-									We seamlessly work with both Apple's native libraries and third-party services.
-            We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
-            implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire for
-								</div>
-							</details>
-						</div>
-					</div>
-				</section>
-			</main>
-			<footer data-fls-footer="" class="footer">
-				<div class="footer__container">
-					<div class="footer__build-app">
-						<div class="build-app">
+				</div>
+			</section>
+			<section class="page__build-app-block build-app-block">
+				<div class="build-app-block__container">
+					<div class="build-app-block__body">
+						<div class="build-app-block__item build-app">
 							<h2 class="build-app__title">Let's build your App</h2>
 							<form class="build-app__form form" action="#" method="post">
 								<div class="form__row">
 									<label class="form__label" for="name">Name</label>
 									<div class="form__input">
-										<input id="name" type="text" name="name" placeholder="John" data-error="Ошибка" required autocomplete="name">
+										<input id="name" type="text" name="name" placeholder="John" data-error="Ошибка" required
+											autocomplete="name">
 									</div>
 								</div>
 								<div class="form__row">
 									<label class="form__label" for="email">Business Email</label>
 									<div class="form__input">
-										<input id="email" type="email" name="email" placeholder="john@gmail.com" data-error="Ошибка" required autocomplete="email">
+										<input id="email" type="email" name="email" placeholder="john@gmail.com" data-error="Ошибка"
+											required autocomplete="email">
 									</div>
 								</div>
 								<div class="form__row">
 									<label class="form__label" for="phone">Phone Number</label>
 									<div class="form__input">
-										<input id="phone" type="tel" name="phone" placeholder="+1 (___) ___ ____" data-error="Ошибка" required autocomplete="tel">
+										<input id="phone" type="tel" name="phone" placeholder="+1 (___) ___ ____" data-error="Ошибка"
+											required autocomplete="tel">
 									</div>
 								</div>
 								<div class="form__submit">
@@ -967,26 +646,421 @@
 							</form>
 						</div>
 					</div>
-					<div class="footer__body">
-						<ul class="footer__contacts contacts-list">
-							<li class="contacts-list__item">
-								<span class="contacts-list__title">Email:</span>
-								<a href="mailto:App4U@gmail.com" class="contacts-list__link">App4U@gmail.com</a>
+				</div>
+			</section>
+			<section class="page__how-we-work how-we-work">
+				<div class="how-we-work__container">
+					<h2 class="how-we-work__title title">How We Work</h2>
+					<div data-fls-slider="" class="how-we-work__slider swiper">
+						<ul class="how-we-work__wrapper swiper-wrapper">
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">Discovery</div>
+									<span class="item-hww__count">01</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
 							</li>
-							<li class="contacts-list__item">
-								<span class="contacts-list__title">Telegram:</span>
-								<a href="#" class="contacts-list__link">@App4U.Develop</a>
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">Design</div>
+									<span class="item-hww__count">02</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
 							</li>
-							<li class="contacts-list__item">
-								<span class="contacts-list__title">Linked In:</span>
-								<a href="#" class="contacts-list__link">linkedin.com/in/App4U</a>
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">Development</div>
+									<span class="item-hww__count">03</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
+							</li>
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">QA</div>
+									<span class="item-hww__count">04</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
+							</li>
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">Deployment</div>
+									<span class="item-hww__count">05</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
+							</li>
+							<li class="how-we-work__slide item-hww swiper-slide">
+								<div class="item-hww__header">
+									<div class="item-hww__title">Support</div>
+									<span class="item-hww__count">06</span>
+								</div>
+								<div class="item-hww__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque at quam vel laoreet.
+										Suspendisse pharetra suscipit faucibus. Nulla consequat arcu non feugiat dignissim. Nulla rhoncus
+										lorem
+										purus, a convallis libero malesuada ac. Donec non euismod leo.
+									</p>
+								</div>
 							</li>
 						</ul>
-						<span class="footer__copy">Copyright © 2025 App4U. All rights reserved.</span>
 					</div>
 				</div>
-				<div class="footer__bg"></div>
-			</footer>
-		</div>
-	</body>
+			</section>
+			<section class="page__pricing pricing">
+				<div class="pricing__container">
+					<h2 class="pricing__title">Pricing Model</h2>
+					<ul class="pricing__list">
+						<li class="pricing__item item-pricing">
+							<div class="item-pricing__header">
+								<h4 class="item-pricing__title">Time & Material Model</h4>
+							</div>
+							<div class="item-pricing__body">
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">Best for:</h5>
+									<div class="item-pricing__text">
+										<ul>
+											<li class="--icon-check">Unclear project scope or evolving requirements</li>
+											<li class="--icon-check">Lack of technical documentation</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">How It Works:</h5>
+									<div class="item-pricing__text">
+										<p>Pay only for the actual hours worked on your project</p>
+										<div class="item-pricing__row">
+											<span>Project Duration:</span>
+											<span>Any</span>
+										</div>
+										<div class="item-pricing__row">
+											<span>Billing:</span>
+											<span>Hourly-based invoicing</span>
+										</div>
+									</div>
+									<p></p>
+								</div>
+							</div>
+						</li>
+						<li class="pricing__item item-pricing">
+							<div class="item-pricing__header">
+								<h4 class="item-pricing__title">Fixed-Price Model</h4>
+							</div>
+							<div class="item-pricing__body">
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">Best for:</h5>
+									<div class="item-pricing__text">
+										<ul>
+											<li class="--icon-check">Well-defined project scope and specifications</li>
+											<li class="--icon-check">Availability of technical documentation</li>
+											<li class="--icon-check">Clear requirements for the mobile app</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">How It Works:</h5>
+									<div class="item-pricing__text">
+										<p>Develop your project with a predefined budget and cost certainty</p>
+										<div class="item-pricing__row">
+											<span>Project Duration:</span>
+											<span>1-6 months</span>
+										</div>
+										<div class="item-pricing__row">
+											<span>Billing:</span>
+											<span>Cost based on project estimates</span>
+										</div>
+									</div>
+									<p></p>
+								</div>
+							</div>
+						</li>
+						<li class="pricing__item item-pricing">
+							<div class="item-pricing__header">
+								<h4 class="item-pricing__title">Dedicated Team Model</h4>
+							</div>
+							<div class="item-pricing__body">
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">Best for:</h5>
+									<div class="item-pricing__text">
+										<ul>
+											<li class="--icon-check">Businesses requiring a full-time development team</li>
+											<li class="--icon-check">Companies seeking maximum control over the development process</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item-pricing__block">
+									<h5 class="item-pricing__block-title">How It Works:</h5>
+									<div class="item-pricing__text">
+										<p>
+											Build a flexible team with the exact skills you need, working exclusively on your project.
+										</p>
+										<div class="item-pricing__row">
+											<span>Project Duration:</span>
+											<span>From 1 month</span>
+										</div>
+										<div class="item-pricing__row">
+											<span>Billing:</span>
+											<span>Monthly fixed price</span>
+										</div>
+									</div>
+									<p></p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<a href="#" class="pricing__btn btn">get free estimate</a>
+				</div>
+			</section>
+			<section class="page__questions questions">
+				<div class="questions__container">
+					<h2 class="questions__title">Frequently Asked Questions</h2>
+					<div data-fls-spollers="" class="spollers">
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What programming languages do you use for mobile app development?
+								</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services. We create scalable,
+								high-performance applications that perfectly meet your expectations. We’re used to implement
+								<a href="#">Combine</a>
+								for
+								reactive programming,
+								<a href="#">SPM</a>
+								for dependency management, and URLSession or Alamofire for networking. Our process
+								is powered by industry-leading tools such as
+								<a href="#">Xcode</a>
+								,
+								<a href="#">Instruments</a>
+								, XCTest and CI/CD integrations to ensure a
+								seamless workflow and exceptional app quality.
+								Talking about user interface development, we specialize in developing flexible, reusable components that
+								adhere precisely to Apple's Human Interface Guidelines (HIG). Our primary frameworks, UIKit and SwiftUI,
+								enable us to craft adaptive and high-quality user interfaces. 
+								Additionally, we maintain support for legacy approaches such as Storyboards and Xibs. And we seamlessly
+								integrate third-party frameworks like Lottie and SnapKit to further enhance functionality and visual
+								appeal.
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What iOS development frameworks and tools do you use?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services. We create scalable,
+								high-performance applications that perfectly meet your expectations. We’re used to implement
+								<a href="#">Combine</a>
+								for
+								reactive programming,
+								<a href="#">SPM</a>
+								for dependency management, and URLSession or Alamofire for networking. Our process
+								is powered by industry-leading tools such as
+								<a href="#">Xcode</a>
+								,
+								<a href="#">Instruments</a>
+								, XCTest and CI/CD integrations to ensure a
+								seamless workflow and exceptional app quality.
+								Talking about user interface development, we specialize in developing flexible, reusable components that
+								adhere precisely to Apple's Human Interface Guidelines (HIG). Our primary frameworks, UIKit and SwiftUI,
+								enable us to craft adaptive and high-quality user interfaces. 
+								Additionally, we maintain support for legacy approaches such as Storyboards and Xibs. And we seamlessly
+								integrate third-party frameworks like Lottie and SnapKit to further enhance functionality and visual
+								appeal.
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">Do you use reactive programming in app development?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">How do you handle concurrency in iOS development?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What mapping and location services do you integrate in mobile apps?
+								</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">How do you handle networking and API integrations?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What tools do you use for dependency management?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">How do you ensure app quality and testing?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">Do you use CI/CD (Continuous Integration / Continuous Deployment)?
+								</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What utilities and tools do you use for code quality?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__title --icon-arr-spoller">
+								<div class="spollers__title-text">What architectural approaches do you use in app development?</div>
+							</summary>
+							<div class="spollers__body">
+								We seamlessly work with both Apple's native libraries and third-party services.
+								We create scalable, high-performance applications that perfectly meet your expectations. We’re used to
+								implement Combine for reactive programming, SPM for dependency management, and URLSession or Alamofire
+								for
+							</div>
+						</details>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer data-fls-footer="" class="footer">
+			<div class="footer__container">
+				<div class="footer__build-app">
+					<div class="build-app">
+						<h2 class="build-app__title">Let's build your App</h2>
+						<form class="build-app__form form" action="#" method="post">
+							<div class="form__row">
+								<label class="form__label" for="name">Name</label>
+								<div class="form__input">
+									<input id="name" type="text" name="name" placeholder="John" data-error="Ошибка" required
+										autocomplete="name">
+								</div>
+							</div>
+							<div class="form__row">
+								<label class="form__label" for="email">Business Email</label>
+								<div class="form__input">
+									<input id="email" type="email" name="email" placeholder="john@gmail.com" data-error="Ошибка" required
+										autocomplete="email">
+								</div>
+							</div>
+							<div class="form__row">
+								<label class="form__label" for="phone">Phone Number</label>
+								<div class="form__input">
+									<input id="phone" type="tel" name="phone" placeholder="+1 (___) ___ ____" data-error="Ошибка" required
+										autocomplete="tel">
+								</div>
+							</div>
+							<div class="form__submit">
+								<button class="btn" type="submit">Send</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="footer__body">
+					<ul class="footer__contacts contacts-list">
+						<li class="contacts-list__item">
+							<span class="contacts-list__title">Email:</span>
+							<a href="mailto:App4U@gmail.com" class="contacts-list__link">App4U@gmail.com</a>
+						</li>
+						<li class="contacts-list__item">
+							<span class="contacts-list__title">Telegram:</span>
+							<a href="#" class="contacts-list__link">@App4U.Develop</a>
+						</li>
+						<li class="contacts-list__item">
+							<span class="contacts-list__title">Linked In:</span>
+							<a href="#" class="contacts-list__link">linkedin.com/in/App4U</a>
+						</li>
+					</ul>
+					<span class="footer__copy">Copyright © 2025 App4U. All rights reserved.</span>
+				</div>
+			</div>
+			<div class="footer__bg"></div>
+		</footer>
+	</div>
+</body>
+
 </html>
